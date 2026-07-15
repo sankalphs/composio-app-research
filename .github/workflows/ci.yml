@@ -28,6 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pages: write
+      pages: read
       id-token: write
     environment:
       name: github-pages
@@ -57,4 +58,4 @@ jobs:
         run: |
           echo "Page URL: ${{ steps.deploy.outputs.page_url }}"
           gh api repos/${{ github.repository }}/pages
-          gh api repos/${{ github.repository }}/pages/health
+          curl -fsS -o /dev/null -w "Live report HTTP %{http_code}\n" "${{ steps.deploy.outputs.page_url }}report.html"
