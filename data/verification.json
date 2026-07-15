@@ -1,0 +1,811 @@
+{
+  "waves": 2,
+  "method": "Parallel research sub-agents (2 waves x 4 agents x 5 apps = 40 apps) + manual doc adjudication (Waterfall).",
+  "metrics": {
+    "sample_size": 40,
+    "self_serve_exact_match": 0.45,
+    "verdict_exact_match": 0.175,
+    "mcp_exact_match": 0.15,
+    "any_field_changed": 38,
+    "firstpass_blocked_count": 17,
+    "verified_blocked_count": 3,
+    "firstpass_blocked_precision": 0.176,
+    "firstpass_blocked_recall": 1.0,
+    "firstpass_false_blocked": [
+      10,
+      15,
+      20,
+      33,
+      37,
+      39,
+      49,
+      50,
+      82,
+      84,
+      88,
+      91,
+      93,
+      100
+    ],
+    "missed_free_selfserve": [
+      3,
+      4,
+      9,
+      12,
+      19,
+      29,
+      37,
+      39,
+      50,
+      60,
+      76,
+      79,
+      82,
+      93
+    ],
+    "corrected_blocked_precision": 1.0,
+    "corrected_blocked_recall": 1.0
+  },
+  "sample": [
+    {
+      "id": 4,
+      "name": "Attio",
+      "category": "CRM & Sales",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 15,
+      "name": "Pylon",
+      "category": "Support & Helpdesk",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 28,
+      "name": "WhatsApp Business",
+      "category": "Comms & Messaging",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "gated",
+        "verdict": "buildable-effort",
+        "mcp": "community"
+      },
+      "ss_match": true,
+      "ve_match": true,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 33,
+      "name": "LinkedIn Ads",
+      "category": "Marketing, Ads, Email & Social",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "gated",
+        "verdict": "buildable-effort",
+        "mcp": "community"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 44,
+      "name": "Salesforce Commerce Cloud",
+      "category": "Ecommerce",
+      "firstpass": {
+        "self_serve": "partner-gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "partner-gated",
+        "verdict": "blocked",
+        "mcp": "official"
+      },
+      "ss_match": true,
+      "ve_match": true,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 10,
+      "name": "DealCloud",
+      "category": "CRM & Sales",
+      "firstpass": {
+        "self_serve": "partner-gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 20,
+      "name": "Gladly",
+      "category": "Support & Helpdesk",
+      "firstpass": {
+        "self_serve": "partner-gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "community"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 30,
+      "name": "Vonage",
+      "category": "Comms & Messaging",
+      "firstpass": {
+        "self_serve": "trial",
+        "verdict": "ready",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 39,
+      "name": "Threads (Meta)",
+      "category": "Marketing, Ads, Email & Social",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "community"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 49,
+      "name": "Amazon Selling Partner",
+      "category": "Ecommerce",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "gated",
+        "verdict": "buildable-effort",
+        "mcp": "community"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 59,
+      "name": "Waterfall.io",
+      "category": "Data, SEO & Scraping",
+      "firstpass": {
+        "self_serve": "partner-gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "partner-gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "ss_match": true,
+      "ve_match": true,
+      "mc_match": true,
+      "changed": false
+    },
+    {
+      "id": 60,
+      "name": "Clay",
+      "category": "Data, SEO & Scraping",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "trial",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 66,
+      "name": "Neo4j",
+      "category": "Dev, Infra & Data Platforms",
+      "firstpass": {
+        "self_serve": "self-serve",
+        "verdict": "ready",
+        "mcp": "community"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 67,
+      "name": "Snowflake",
+      "category": "Dev, Infra & Data Platforms",
+      "firstpass": {
+        "self_serve": "trial",
+        "verdict": "ready",
+        "mcp": "community"
+      },
+      "verified": {
+        "self_serve": "trial",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 76,
+      "name": "Monday.com",
+      "category": "Productivity & PM",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "community"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 79,
+      "name": "Smartsheet",
+      "category": "Productivity & PM",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 82,
+      "name": "Plaid",
+      "category": "Finance & Fintech",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 88,
+      "name": "Brex",
+      "category": "Finance & Fintech",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "gated",
+        "verdict": "buildable-effort",
+        "mcp": "official"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 91,
+      "name": "NotebookLM",
+      "category": "AI, Research & Media",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": true,
+      "changed": true
+    },
+    {
+      "id": 100,
+      "name": "Grain",
+      "category": "AI, Research & Media",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "community"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 3,
+      "name": "Pipedrive",
+      "category": "CRM & Sales",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "community"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "community"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": true,
+      "changed": true
+    },
+    {
+      "id": 12,
+      "name": "Intercom",
+      "category": "Support & Helpdesk",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 22,
+      "name": "Twilio",
+      "category": "Comms & Messaging",
+      "firstpass": {
+        "self_serve": "trial",
+        "verdict": "ready",
+        "mcp": "community"
+      },
+      "verified": {
+        "self_serve": "trial",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 34,
+      "name": "GoHighLevel",
+      "category": "Marketing, Ads, Email & Social",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "official"
+      },
+      "ss_match": true,
+      "ve_match": true,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 46,
+      "name": "Squarespace",
+      "category": "Ecommerce",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "community"
+      },
+      "ss_match": true,
+      "ve_match": true,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 9,
+      "name": "Copper",
+      "category": "CRM & Sales",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "trial",
+        "verdict": "ready-mcp",
+        "mcp": "community"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 19,
+      "name": "Gorgias",
+      "category": "Support & Helpdesk",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "trial",
+        "verdict": "ready-mcp",
+        "mcp": "community"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 29,
+      "name": "Aircall",
+      "category": "Comms & Messaging",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "trial",
+        "verdict": "ready",
+        "mcp": "none"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": true,
+      "changed": true
+    },
+    {
+      "id": 37,
+      "name": "systeme.io",
+      "category": "Marketing, Ads, Email & Social",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 50,
+      "name": "fanbasis",
+      "category": "Ecommerce",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 51,
+      "name": "DataForSEO",
+      "category": "Data, SEO & Scraping",
+      "firstpass": {
+        "self_serve": "trial",
+        "verdict": "ready",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 53,
+      "name": "Ahrefs",
+      "category": "Data, SEO & Scraping",
+      "firstpass": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "paid-only",
+        "verdict": "buildable-effort",
+        "mcp": "official"
+      },
+      "ss_match": true,
+      "ve_match": true,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 62,
+      "name": "Vercel",
+      "category": "Dev, Infra & Data Platforms",
+      "firstpass": {
+        "self_serve": "self-serve",
+        "verdict": "ready",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "community"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 68,
+      "name": "MongoDB Atlas",
+      "category": "Dev, Infra & Data Platforms",
+      "firstpass": {
+        "self_serve": "self-serve",
+        "verdict": "ready",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 72,
+      "name": "Airtable",
+      "category": "Productivity & PM",
+      "firstpass": {
+        "self_serve": "self-serve",
+        "verdict": "ready",
+        "mcp": "community"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 77,
+      "name": "ClickUp",
+      "category": "Productivity & PM",
+      "firstpass": {
+        "self_serve": "self-serve",
+        "verdict": "ready",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 84,
+      "name": "Paygent Connect",
+      "category": "Finance & Fintech",
+      "firstpass": {
+        "self_serve": "partner-gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "gated",
+        "verdict": "buildable-effort",
+        "mcp": "none"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": true,
+      "changed": true
+    },
+    {
+      "id": 90,
+      "name": "PitchBook",
+      "category": "Finance & Fintech",
+      "firstpass": {
+        "self_serve": "partner-gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "partner-gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "ss_match": true,
+      "ve_match": true,
+      "mc_match": true,
+      "changed": false
+    },
+    {
+      "id": 93,
+      "name": "Fathom",
+      "category": "AI, Research & Media",
+      "firstpass": {
+        "self_serve": "gated",
+        "verdict": "blocked",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "official"
+      },
+      "ss_match": false,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    },
+    {
+      "id": 98,
+      "name": "Mermaid CLI",
+      "category": "AI, Research & Media",
+      "firstpass": {
+        "self_serve": "self-serve",
+        "verdict": "ready",
+        "mcp": "none"
+      },
+      "verified": {
+        "self_serve": "self-serve",
+        "verdict": "ready-mcp",
+        "mcp": "community"
+      },
+      "ss_match": true,
+      "ve_match": false,
+      "mc_match": false,
+      "changed": true
+    }
+  ]
+}

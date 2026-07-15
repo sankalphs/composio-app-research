@@ -1,0 +1,213 @@
+{
+  "total": 100,
+  "auth_methods": {
+    "OAuth2": 66,
+    "API Key": 49,
+    "Bearer/Token": 43,
+    "Basic": 9,
+    "None": 3,
+    "Other": 1
+  },
+  "self_serve": {
+    "trial": 16,
+    "self-serve": 57,
+    "paid-only": 16,
+    "gated": 8,
+    "partner-gated": 3
+  },
+  "verdict": {
+    "ready": 43,
+    "ready-mcp": 29,
+    "buildable-effort": 23,
+    "blocked": 5
+  },
+  "mcp": {
+    "community": 28,
+    "official": 28,
+    "none": 44
+  },
+  "confidence": {
+    "high": 78,
+    "medium": 22
+  },
+  "categories": {
+    "CRM & Sales": {
+      "total": 10,
+      "ready": 8,
+      "ready_mcp": 4,
+      "buildable_effort": 2,
+      "blocked": 0,
+      "self_serve_free": 8,
+      "gated": 0,
+      "paid_only": 2,
+      "mcp_any": 8
+    },
+    "Support & Helpdesk": {
+      "total": 10,
+      "ready": 4,
+      "ready_mcp": 2,
+      "buildable_effort": 5,
+      "blocked": 1,
+      "self_serve_free": 4,
+      "gated": 1,
+      "paid_only": 5,
+      "mcp_any": 5
+    },
+    "Comms & Messaging": {
+      "total": 10,
+      "ready": 9,
+      "ready_mcp": 3,
+      "buildable_effort": 1,
+      "blocked": 0,
+      "self_serve_free": 9,
+      "gated": 1,
+      "paid_only": 0,
+      "mcp_any": 6
+    },
+    "Marketing, Ads, Email & Social": {
+      "total": 10,
+      "ready": 8,
+      "ready_mcp": 2,
+      "buildable_effort": 2,
+      "blocked": 0,
+      "self_serve_free": 8,
+      "gated": 1,
+      "paid_only": 1,
+      "mcp_any": 5
+    },
+    "Ecommerce": {
+      "total": 10,
+      "ready": 7,
+      "ready_mcp": 2,
+      "buildable_effort": 2,
+      "blocked": 1,
+      "self_serve_free": 7,
+      "gated": 2,
+      "paid_only": 1,
+      "mcp_any": 5
+    },
+    "Data, SEO & Scraping": {
+      "total": 10,
+      "ready": 7,
+      "ready_mcp": 2,
+      "buildable_effort": 2,
+      "blocked": 1,
+      "self_serve_free": 7,
+      "gated": 1,
+      "paid_only": 2,
+      "mcp_any": 4
+    },
+    "Dev, Infra & Data Platforms": {
+      "total": 10,
+      "ready": 10,
+      "ready_mcp": 5,
+      "buildable_effort": 0,
+      "blocked": 0,
+      "self_serve_free": 10,
+      "gated": 0,
+      "paid_only": 0,
+      "mcp_any": 5
+    },
+    "Productivity & PM": {
+      "total": 10,
+      "ready": 10,
+      "ready_mcp": 5,
+      "buildable_effort": 0,
+      "blocked": 0,
+      "self_serve_free": 10,
+      "gated": 0,
+      "paid_only": 0,
+      "mcp_any": 8
+    },
+    "Finance & Fintech": {
+      "total": 10,
+      "ready": 5,
+      "ready_mcp": 2,
+      "buildable_effort": 4,
+      "blocked": 1,
+      "self_serve_free": 6,
+      "gated": 4,
+      "paid_only": 0,
+      "mcp_any": 5
+    },
+    "AI, Research & Media": {
+      "total": 10,
+      "ready": 4,
+      "ready_mcp": 2,
+      "buildable_effort": 5,
+      "blocked": 1,
+      "self_serve_free": 4,
+      "gated": 1,
+      "paid_only": 5,
+      "mcp_any": 5
+    }
+  },
+  "blocked_apps": [
+    {
+      "id": 17,
+      "name": "Plain",
+      "category": "Support & Helpdesk",
+      "blocker": "Request-access; no public self-serve",
+      "evidence": "https://www.plain.com/"
+    },
+    {
+      "id": 44,
+      "name": "Salesforce Commerce Cloud",
+      "category": "Ecommerce",
+      "blocker": "Real API credentials require a licensed B2C Commerce instance (enterprise contract); no self-serve production access.",
+      "evidence": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html"
+    },
+    {
+      "id": 59,
+      "name": "Waterfall.io",
+      "category": "Data, SEO & Scraping",
+      "blocker": "No documented self-serve credential path; key requires a contract / sales conversation.",
+      "evidence": "https://docs.waterfall.io/v1/authentication"
+    },
+    {
+      "id": 90,
+      "name": "PitchBook",
+      "category": "Finance & Fintech",
+      "blocker": "API access requires a standalone contract; no self-serve or free signup.",
+      "evidence": "https://pitchbook.com/products/direct-access-data/api"
+    },
+    {
+      "id": 94,
+      "name": "Consensus",
+      "category": "AI, Research & Media",
+      "blocker": "API access request only",
+      "evidence": "https://consensus.app/"
+    }
+  ],
+  "mcp_ready_apps": [
+    "HubSpot",
+    "Pipedrive",
+    "Attio",
+    "Copper",
+    "Intercom",
+    "Gorgias",
+    "Slack",
+    "Twilio",
+    "Vonage",
+    "systeme.io",
+    "Threads (Meta)",
+    "Shopify",
+    "fanbasis",
+    "DataForSEO",
+    "Clay",
+    "GitHub",
+    "Vercel",
+    "Neo4j",
+    "Snowflake",
+    "MongoDB Atlas",
+    "Notion",
+    "Airtable",
+    "Monday.com",
+    "ClickUp",
+    "Smartsheet",
+    "Stripe",
+    "Plaid",
+    "Fathom",
+    "Mermaid CLI"
+  ]
+}

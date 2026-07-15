@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Constraint: E2E and Playwright tests are excluded from the CI/CD pipeline.
+addopts = "--ignore=tests/e2e --ignore=tests/playwright -q"
