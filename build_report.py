@@ -317,7 +317,7 @@ footer .mono{font-family:var(--mono);font-size:11px}
 <section class="section" id="agent"><div class="wrap">
   <div class="eyebrow">03 / The Agent</div>
   <h2>How the research was actually done</h2>
-  <p class="lede">Not by hand. A research agent (<code>agent/research.py</code>) opens a ReAct loop per app: it queries a web-search backend, feeds the evidence to an LLM, and emits the structured schema. The 100 were produced by a curated knowledge seed + this agent, then hardened by the verification loop below.</p>
+  <p class="lede">Not by hand. A research agent (<code>agent/research.py</code>) is a ReAct LLM + web-search loop that emits the structured schema per app. The 100 were researched by a <b>pipeline of research sub-agents</b> built around that agent &mdash; each wave queries web-search + primary docs and emits a record &mdash; bootstrapped from a curated knowledge seed, then hardened by the 12-wave verification loop below. <code>research.py</code> is the reusable agent those sub-agents run.</p>
   <div class="flow">
     <div class="step"><div class="n">STEP 01</div><h4>Seed + schema</h4><p>100 apps + fields (auth, self-serve, API, MCP, verdict, blocker, evidence) defined in <code>data/seed.py</code>.</p><div class="arrow">&#8594;</div></div>
     <div class="step"><div class="n">STEP 02</div><h4>Agent research</h4><p><code>research.py</code> runs an LLM + web-search loop per app, fills the schema, flags low-confidence rows.</p><div class="arrow">&#8594;</div></div>
@@ -342,7 +342,7 @@ python agent/research.py --apps data/apps_input.json \
       <h3 style="font-family:var(--disp);margin:0 0 10px">Where a human was needed</h3>
       <ul style="font-size:13px;color:var(--ink-soft);margin:0;padding-left:18px;line-height:1.7">
         <li>Defining the schema &amp; the <b>self-serve / gated / partner-gated</b> definitions so &ldquo;needs approval&rdquo; is not mistaken for &ldquo;blocked.&rdquo;</li>
-        <li>Seeding the first 100 from curated knowledge (the sandbox had no LLM key).</li>
+        <li>Seeding the first 100 from curated knowledge (the sandbox had no LLM key) and orchestrating the sub-agent research + 12-wave verification, then merging their JSON outputs.</li>
         <li><b>Adjudicating Waterfall.io</b> by reading its docs directly &mdash; the agent said buildable, docs say &ldquo;book a call,&rdquo; so we kept it <b>blocked</b>.</li>
         <li>Fixing <b>Ramp</b> for consistency with its verified twin <b>Brex</b>.</li>
         <li>Reading this page &mdash; the judgment calls are mine, the rows are the agent's.</li>

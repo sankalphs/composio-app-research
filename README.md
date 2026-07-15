@@ -37,7 +37,8 @@ patterns across them and a verification loop that proves the findings are trustw
 ### Why a human was needed
 - Defining the schema + the **self-serve / gated / partner-gated** definitions so
   "needs approval" is not mistaken for "blocked".
-- Seeding the first 100 (the sandbox had no LLM key).
+- Seeding the first 100 (the sandbox had no LLM key) and orchestrating the
+  sub-agent research + 12-wave verification, then merging their JSON outputs.
 - **Adjudicating Waterfall.io** from its docs (agent said buildable; docs say
   "book a call" -> kept `blocked`).
 - Fixing **Ramp** for consistency with its verified twin **Brex**.
@@ -60,6 +61,12 @@ pytest -q
 
 The deployed page and the dataset are regenerated from the same data on every push
 via GitHub Actions (Pages source = GitHub Actions; deploy verified with `gh`).
+
+### Note on Composio's own SDK / MCP
+The assignment invites using Composio's SDK/MCP "in the spirit of the role." This
+pipeline is provider-agnostic (OpenAI/Anthropic + Tavily/SerpAPI in `research.py`,
+OpenRouter in the verification sub-agents) and does not depend on it, but
+`research.py` can be pointed at Composio's tooling to source app metadata.
 
 ## Headline findings
 
