@@ -1,155 +1,148 @@
 {
   "total": 100,
   "auth_methods": {
-    "OAuth2": 66,
-    "API Key": 49,
-    "Bearer/Token": 43,
-    "Basic": 9,
-    "None": 3,
+    "OAuth2": 63,
+    "Bearer/Token": 52,
+    "API Key": 44,
+    "Basic": 11,
+    "None": 4,
     "Other": 1
   },
   "self_serve": {
+    "self-serve": 59,
     "trial": 16,
-    "self-serve": 57,
-    "paid-only": 16,
-    "gated": 8,
+    "paid-only": 11,
+    "gated": 11,
     "partner-gated": 3
   },
   "verdict": {
-    "ready": 43,
-    "ready-mcp": 29,
-    "buildable-effort": 23,
-    "blocked": 5
+    "ready-mcp": 63,
+    "buildable-effort": 33,
+    "ready": 1,
+    "blocked": 3
   },
   "mcp": {
-    "community": 28,
-    "official": 28,
-    "none": 44
+    "official": 65,
+    "community": 30,
+    "none": 5
   },
   "confidence": {
-    "high": 78,
-    "medium": 22
+    "high": 86,
+    "medium": 14
   },
   "categories": {
     "CRM & Sales": {
       "total": 10,
       "ready": 8,
-      "ready_mcp": 4,
+      "ready_mcp": 8,
       "buildable_effort": 2,
+      "blocked": 0,
+      "self_serve_free": 9,
+      "gated": 0,
+      "paid_only": 1,
+      "mcp_any": 10
+    },
+    "Support & Helpdesk": {
+      "total": 10,
+      "ready": 2,
+      "ready_mcp": 2,
+      "buildable_effort": 8,
       "blocked": 0,
       "self_serve_free": 8,
       "gated": 0,
       "paid_only": 2,
-      "mcp_any": 8
-    },
-    "Support & Helpdesk": {
-      "total": 10,
-      "ready": 4,
-      "ready_mcp": 2,
-      "buildable_effort": 5,
-      "blocked": 1,
-      "self_serve_free": 4,
-      "gated": 1,
-      "paid_only": 5,
-      "mcp_any": 5
+      "mcp_any": 10
     },
     "Comms & Messaging": {
       "total": 10,
       "ready": 9,
-      "ready_mcp": 3,
+      "ready_mcp": 8,
       "buildable_effort": 1,
       "blocked": 0,
       "self_serve_free": 9,
       "gated": 1,
       "paid_only": 0,
-      "mcp_any": 6
+      "mcp_any": 9
     },
     "Marketing, Ads, Email & Social": {
       "total": 10,
-      "ready": 8,
-      "ready_mcp": 2,
-      "buildable_effort": 2,
+      "ready": 5,
+      "ready_mcp": 5,
+      "buildable_effort": 5,
       "blocked": 0,
-      "self_serve_free": 8,
-      "gated": 1,
+      "self_serve_free": 5,
+      "gated": 4,
       "paid_only": 1,
-      "mcp_any": 5
+      "mcp_any": 10
     },
     "Ecommerce": {
       "total": 10,
-      "ready": 7,
-      "ready_mcp": 2,
-      "buildable_effort": 2,
+      "ready": 4,
+      "ready_mcp": 4,
+      "buildable_effort": 5,
       "blocked": 1,
-      "self_serve_free": 7,
+      "self_serve_free": 5,
       "gated": 2,
-      "paid_only": 1,
-      "mcp_any": 5
+      "paid_only": 3,
+      "mcp_any": 10
     },
     "Data, SEO & Scraping": {
       "total": 10,
-      "ready": 7,
-      "ready_mcp": 2,
-      "buildable_effort": 2,
+      "ready": 5,
+      "ready_mcp": 5,
+      "buildable_effort": 4,
       "blocked": 1,
-      "self_serve_free": 7,
+      "self_serve_free": 8,
       "gated": 1,
-      "paid_only": 2,
-      "mcp_any": 4
+      "paid_only": 1,
+      "mcp_any": 9
     },
     "Dev, Infra & Data Platforms": {
       "total": 10,
       "ready": 10,
-      "ready_mcp": 5,
+      "ready_mcp": 10,
       "buildable_effort": 0,
       "blocked": 0,
       "self_serve_free": 10,
       "gated": 0,
       "paid_only": 0,
-      "mcp_any": 5
+      "mcp_any": 10
     },
     "Productivity & PM": {
       "total": 10,
       "ready": 10,
-      "ready_mcp": 5,
+      "ready_mcp": 10,
       "buildable_effort": 0,
       "blocked": 0,
       "self_serve_free": 10,
       "gated": 0,
       "paid_only": 0,
-      "mcp_any": 8
+      "mcp_any": 10
     },
     "Finance & Fintech": {
       "total": 10,
-      "ready": 5,
-      "ready_mcp": 2,
-      "buildable_effort": 4,
+      "ready": 6,
+      "ready_mcp": 6,
+      "buildable_effort": 3,
       "blocked": 1,
       "self_serve_free": 6,
       "gated": 4,
       "paid_only": 0,
-      "mcp_any": 5
+      "mcp_any": 8
     },
     "AI, Research & Media": {
       "total": 10,
-      "ready": 4,
-      "ready_mcp": 2,
+      "ready": 5,
+      "ready_mcp": 5,
       "buildable_effort": 5,
-      "blocked": 1,
-      "self_serve_free": 4,
-      "gated": 1,
-      "paid_only": 5,
-      "mcp_any": 5
+      "blocked": 0,
+      "self_serve_free": 5,
+      "gated": 2,
+      "paid_only": 3,
+      "mcp_any": 9
     }
   },
   "blocked_apps": [
-    {
-      "id": 17,
-      "name": "Plain",
-      "category": "Support & Helpdesk",
-      "blocker": "Request-access; no public self-serve",
-      "evidence": "https://www.plain.com/"
-    },
     {
       "id": 44,
       "name": "Salesforce Commerce Cloud",
@@ -170,44 +163,71 @@
       "category": "Finance & Fintech",
       "blocker": "API access requires a standalone contract; no self-serve or free signup.",
       "evidence": "https://pitchbook.com/products/direct-access-data/api"
-    },
-    {
-      "id": 94,
-      "name": "Consensus",
-      "category": "AI, Research & Media",
-      "blocker": "API access request only",
-      "evidence": "https://consensus.app/"
     }
   ],
   "mcp_ready_apps": [
+    "Salesforce",
     "HubSpot",
     "Pipedrive",
     "Attio",
+    "Twenty",
+    "Podio",
+    "Zoho CRM",
     "Copper",
     "Intercom",
     "Gorgias",
     "Slack",
     "Twilio",
+    "Zoho Cliq",
+    "Lark (Larksuite)",
+    "Pumble",
+    "Discord",
+    "Telegram",
     "Vonage",
+    "Mailchimp",
+    "Klaviyo",
     "systeme.io",
     "Threads (Meta)",
+    "SendGrid",
     "Shopify",
+    "WooCommerce",
+    "Gumroad",
     "fanbasis",
     "DataForSEO",
+    "Apify",
+    "Firecrawl",
+    "Bright Data",
     "Clay",
     "GitHub",
     "Vercel",
+    "Netlify",
+    "Cloudflare",
+    "Supabase",
     "Neo4j",
     "Snowflake",
     "MongoDB Atlas",
+    "Datadog",
+    "Sentry",
     "Notion",
     "Airtable",
+    "Linear",
+    "Jira",
+    "Asana",
     "Monday.com",
     "ClickUp",
+    "Coda",
     "Smartsheet",
+    "Harvest",
     "Stripe",
     "Plaid",
+    "iPayX",
+    "QuickBooks",
+    "Xero",
+    "Ramp",
     "Fathom",
-    "Mermaid CLI"
+    "Reducto",
+    "higgsfield",
+    "Mermaid CLI",
+    "YouTube Transcript"
   ]
 }

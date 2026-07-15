@@ -103,6 +103,40 @@ def _client():
     return llm, search
 
 
+def _bing_search(q: str, n: int = 6):
+    import urllib.request, urllib.parse, re, html
+    try:
+        url = "https://www.bing.com/search?q=" + urllib.parse.quote(q) + "&setlang=en"
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"})
+        page = urllib.request.urlopen(req, timeout=25).read().decode("utf-8", "ignore")
+        blocks = re.findall(r'<li class="b_algo"[^>]*>(.*?)</li>', page, re.S)
+        out = []
+        for b in blocks:
+            href = re.search(r'href="(https?://[^"]+)"', b)
+            a = re.search(r'<a[^>]+href="https?://[^"]+"[^>]*>(.*?)</a>', b, re.S)
+            p = re.search(r'<p[^>]*>(.*?)</p>', b, re.S)
+            if not href:
+                continue
+            title = html.unescape(re.sub(r"<[^>]+>", "", a.group(1))).strip() if a else ""
+            snip = html.unescape(re.sub(r"<[^>]+>", "", p.group(1))).strip() if p else ""
+            out.append({"title": title, "url": href.group(1), "content": snip})
+            if len(out) >= n:
+                break
+        if out:
+            return out
+        # fallback: any external result links on the page
+        for m in re.findall(r'<a[^>]+href="(https?://[^"]+)"[^>]*>(.*?)</a>', page, re.S):
+            if len(m[1]) > 15 and "bing.com" not in m[0]:
+                out.append({"title": html.unescape(re.sub(r"<[^>]+>", "", m[1])).strip(),
+                            "url": m[0], "content": ""})
+                if len(out) >= n:
+                    break
+        return out
+    except Exception:
+        return []
+
+
 def _make_search():
     if os.environ.get("TAVILY_API_KEY"):
         from tavily import TavilyClient
@@ -126,11 +160,38 @@ def _make_search():
                             "content": d.get("snippet", "")})
             return out
         return search
-    # No search key: the LLM may still have a native web_search tool.
-    return lambda q, n=5: []
+    # Key-less fallback: Bing web search (proven reachable from this environment).
+    return _bing_search
+
+
+def _openrouter_llm(model=None):
+    import urllib.request as _ur, json as _json
+    key = os.environ["OPENROUTER_API_KEY"]
+    model = model or os.environ.get("OPENROUTER_MODEL") or "tencent/hy3:free"
+
+    def llm(messages, tools=None, tool_choice=None):
+        body = _json.dumps({"model": model, "messages": messages,
+                            "temperature": 0}).encode()
+        req = _ur.Request(
+            "https://openrouter.ai/api/v1/chat/completions", data=body,
+            headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json",
+                     "HTTP-Referer": "https://composio.app", "X-Title": "Composio Research"},
+            method="POST")
+        with _ur.urlopen(req, timeout=60) as r:
+            data = _json.load(r)
+        content = data["choices"][0]["message"]["content"]
+
+        class Msg:
+            pass
+        msg = Msg()
+        msg.content = content
+        return msg
+    return llm
 
 
 def _make_llm():
+    if os.environ.get("OPENROUTER_API_KEY"):
+        return _openrouter_llm()
     if os.environ.get("OPENAI_API_KEY"):
         from openai import OpenAI
         c = OpenAI()
@@ -144,8 +205,6 @@ def _make_llm():
             return resp.choices[0].message
         return llm
     if os.environ.get("ANTHROPIC_API_KEY"):
-        from openai import OpenAI  # anthropic-compatible via openai if configured
-        # fallback: use anthropic sdk
         try:
             import anthropic
             c = anthropic.Anthropic()
@@ -154,14 +213,13 @@ def _make_llm():
                 sys_prompt = "You are a precise API-research assistant."
                 resp = c.messages.create(model=model, max_tokens=1500,
                                          system=sys_prompt, messages=messages)
-                # minimal adapter: return content text
                 class Msg:
                     content = getattr(resp, "content", None)
                 return Msg()
             return llm
         except Exception:
             pass
-    raise RuntimeError("No LLM key set (OPENAI_API_KEY or ANTHROPIC_API_KEY).")
+    raise RuntimeError("No LLM key set (OPENROUTER_API_KEY / OPENAI_API_KEY / ANTHROPIC_API_KEY).")
 
 
 # --------------------------------------------------------------------------

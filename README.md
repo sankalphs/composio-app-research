@@ -14,9 +14,10 @@ patterns across them and a verification loop that proves the findings are trustw
 | `agent/research.py` | The **research agent**. LLM + web-search ReAct loop that fills the structured schema per app. Provider-agnostic (OpenAI / Anthropic + Tavily / SerpAPI). |
 | `data/apps_input.json` | The 100 apps (id, name, category, website). |
 | `data/seed.py` | Curated knowledge seed that bootstraps the dataset (the schema the agent emits). |
-| `data/verify.py` | Verification harness: applies the agent-verified ground truth for a 40-app sample, computes before/after accuracy, writes the corrected dataset + `verification.json` + `aggregates.json`. |
-| `data/apps_research.json` | **Final dataset (100 apps)** after the verification loop. |
-| `data/verification.json` | The 40-app sample: first-pass vs verified, with accuracy metrics. |
+| `data/verify.py` | Verification harness: merges the web-verified ground truth for **all 100 apps** (40-app sample + 60 re-verified this run via `data/web_wave*.json`), computes first-pass (knowledge-based) vs web-verified accuracy, writes the corrected dataset + `verification.json` + `aggregates.json`. |
+| `data/apps_research.json` | **Final dataset (100 apps)**, every record web-verified from live documentation. |
+| `data/web_wave1-12.json` | Raw sub-agent outputs: 60 apps re-verified this run (12 waves x 5). |
+| `data/verification.json` | Full 100-app: first-pass (knowledge-based) vs web-verified, with accuracy metrics. |
 | `data/aggregates.json` | Counts by category / auth / self-serve / verdict / MCP. |
 | `build_report.py` | Generates the single self-contained `report/report.html` from the data. |
 | `tests/test_pipeline.py` | Pipeline tests (schema completeness, aggregate consistency, build). E2E/Playwright excluded. |
@@ -27,10 +28,11 @@ patterns across them and a verification loop that proves the findings are trustw
 1. **Seed + schema** - 100 apps and the field schema in `data/seed.py`.
 2. **Agent research** - `agent/research.py` runs an LLM + web-search loop per app,
    emitting the structured record and flagging low-confidence rows.
-3. **Verify (2 waves)** - 8 parallel research sub-agents re-researched a 40-app
-   stratified sample from primary docs; manual `webfetch` adjudicated edge cases.
-4. **Correct + report** - diff first-pass vs verified, fix the dataset, regenerate
-   the page from the data.
+ 3. **Verify (full 100)** - research sub-agents web-verified **all 100 apps** from
+    primary docs: a 40-app sample (2 waves x 4 agents x 5) plus **60 apps re-verified
+    this run** across 12 sub-agent waves (`data/web_wave1-12.json`), each persisted as JSON.
+ 4. **Correct + report** - diff first-pass (knowledge-based) vs web-verified, fix the
+    dataset (92/100 records changed), regenerate the page from the data.
 
 ### Why a human was needed
 - Defining the schema + the **self-serve / gated / partner-gated** definitions so
@@ -61,13 +63,16 @@ via GitHub Actions (Pages source = GitHub Actions; deploy verified with `gh`).
 
 ## Headline findings
 
-- **72% buildable now** (43 ready + 29 ready-with-MCP); 23% buildable-with-effort; **only 5 truly blocked**.
-- **OAuth2 dominates** (66/100), usually alongside an API key / token.
-- **56/100 already have an MCP server** (official or community) - the win is wiring
-  these up, not building from scratch.
-- Finance + enterprise CRM are the outreach pile (PitchBook, Salesforce Commerce
-  Cloud, Waterfall, Plain, Consensus). Dev/Infra + Comms are the easy wins.
+- **97% buildable** (64 ready/ready-with-MCP + 33 with-effort); **only 3 truly blocked**
+  (Salesforce Commerce Cloud, Waterfall.io, PitchBook).
+- **OAuth2 dominates** (63/100), usually alongside an API key / bearer token.
+- **95/100 already have an MCP server** (65 official + 30 community) - the win is
+  wiring these up, not building from scratch; only 5 have none.
+- The 33 "with-effort" apps need a paid plan or identity/app-review (e.g. finance,
+  ads, enterprise). Dev/Infra + Comms are the easy wins; finance + enterprise commerce
+  are the hard wall.
 
 ### Verification in one line
-First pass flagged **17** apps as `blocked`; only **3** truly are -> blocked-precision
-**17.6%**. After the loop: **100%**, and **38 of 40** sampled apps were corrected.
+The knowledge-based first pass flagged **20** apps as `blocked`; only **3** truly are ->
+blocked-precision **15%** (recall 100%). After web verification **92 of 100** records
+were corrected, and the dataset is now **100% web-checked** from primary docs.

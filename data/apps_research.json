@@ -4,17 +4,17 @@
     "name": "Salesforce",
     "website": "salesforce.com",
     "category": "CRM & Sales",
-    "one_line": "Cloud CRM and sales/Service Cloud platform.",
+    "one_line": "Enterprise cloud CRM and sales platform with a large API ecosystem.",
     "auth_methods": [
       "OAuth2"
     ],
-    "self_serve": "trial",
-    "self_serve_detail": "Free Developer Edition + SalesforceDX; distributed/ISV apps need partner/security review.",
-    "api_surface": "REST, SOAP, GraphQL, Bulk, Metadata - very broad",
-    "mcp": "community",
-    "verdict": "ready",
+    "self_serve": "self-serve",
+    "self_serve_detail": "Sign up for a free Salesforce Developer Edition org; create an External Client App (or connected app) in Setup to obtain a consumer key/secret and OAuth scopes. No paid plan or human approval is required to get API credentials.",
+    "api_surface": "REST broad (plus SOAP, Bulk, many specialized APIs)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developer.salesforce.com/docs/apis",
+    "evidence": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm",
     "confidence": "high"
   },
   {
@@ -22,18 +22,18 @@
     "name": "HubSpot",
     "website": "hubspot.com",
     "category": "CRM & Sales",
-    "one_line": "CRM, marketing and service hub.",
+    "one_line": "Inbound CRM, marketing, and sales platform with open RESTful APIs.",
     "auth_methods": [
       "OAuth2",
-      "API Key"
+      "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free tier; private-app token + OAuth self-serve.",
-    "api_surface": "REST broad; GraphQL (CMS)",
+    "self_serve_detail": "Create a free HubSpot account (no paid plan needed); create an app to get OAuth client ID/secret, or a private app access token (Bearer). Free developer account includes test accounts and API access.",
+    "api_surface": "REST broad",
     "mcp": "official",
     "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developers.hubspot.com/docs/api",
+    "evidence": "https://developers.hubspot.com/developer-platform-basics",
     "confidence": "high"
   },
   {
@@ -80,18 +80,18 @@
     "name": "Twenty",
     "website": "twenty.com",
     "category": "CRM & Sales",
-    "one_line": "Open-source CRM (self-host or cloud).",
+    "one_line": "Open-source, developer-friendly CRM with GraphQL and REST APIs.",
     "auth_methods": [
-      "OAuth2",
-      "API Key"
+      "Bearer/Token",
+      "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Open-source self-host free; cloud free tier with API key.",
-    "api_surface": "REST + GraphQL",
-    "mcp": "community",
-    "verdict": "ready",
+    "self_serve_detail": "Create an API key in workspace Settings -> API & Webhooks (available on free Cloud workspaces); keys are Bearer tokens scoping to roles. No paid plan or approval required for API access.",
+    "api_surface": "GraphQL + REST (schema-generated, broad CRUD)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://twenty.com/developers",
+    "evidence": "https://docs.twenty.com/developers/extend/api",
     "confidence": "high"
   },
   {
@@ -99,17 +99,17 @@
     "name": "Podio",
     "website": "podio.com",
     "category": "CRM & Sales",
-    "one_line": "Citrix Podio work/collaboration platform.",
+    "one_line": "Customizable work-management and CRM app platform.",
     "auth_methods": [
       "OAuth2"
     ],
-    "self_serve": "trial",
-    "self_serve_detail": "Free tier includes API; OAuth app self-serve.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve": "self-serve",
+    "self_serve_detail": "Register an app at podio.com/settings/api to get a client ID/secret for OAuth2. The Podio API is free for both free and premium accounts; no paid plan or approval needed. App-authentication (app id/token) and password flows also available.",
+    "api_surface": "REST broad",
+    "mcp": "community",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developers.podio.com/",
+    "evidence": "https://developers.podio.com/authentication",
     "confidence": "medium"
   },
   {
@@ -117,18 +117,18 @@
     "name": "Zoho CRM",
     "website": "zoho.com/crm",
     "category": "CRM & Sales",
-    "one_line": "Zoho suite CRM.",
+    "one_line": "Cloud CRM for sales, marketing, and customer support.",
     "auth_methods": [
       "OAuth2",
-      "API Key"
+      "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free tier; self-service OAuth + API tokens.",
-    "api_surface": "REST/SOAP broad",
-    "mcp": "community",
-    "verdict": "ready",
+    "self_serve_detail": "Sign up for a free Zoho account; register a client (Self Client) in the Zoho API Console to get a client ID/secret, generate a grant token, and exchange it for OAuth2 access/refresh tokens. No paid plan or approval required.",
+    "api_surface": "REST broad (v8, COQL, metadata)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://www.zoho.com/crm/developer/docs/api/v6/",
+    "evidence": "https://www.zoho.com/crm/developer/docs/mcp/overview.html",
     "confidence": "high"
   },
   {
@@ -136,18 +136,18 @@
     "name": "Close",
     "website": "close.com",
     "category": "CRM & Sales",
-    "one_line": "Inside-sales CRM with calling.",
+    "one_line": "Close is a sales CRM built around calling, email, SMS, and pipeline management.",
     "auth_methods": [
-      "OAuth2",
-      "Bearer/Token"
+      "API Key",
+      "OAuth2"
     ],
-    "self_serve": "paid-only",
-    "self_serve_detail": "API on paid plans (trial).",
-    "api_surface": "REST moderate",
-    "mcp": "none",
+    "self_serve": "trial",
+    "self_serve_detail": "Create an API key in Settings → Developer → API Keys in any Close account (paid; free trial available). No approval. OAuth 2.0 apps also registerable for user-facing integrations.",
+    "api_surface": "REST broad (api.close.com/api/v1)",
+    "mcp": "official",
     "verdict": "buildable-effort",
-    "blocker": "Paid plan for API",
-    "evidence": "https://developer.close.com/",
+    "blocker": "",
+    "evidence": "https://developer.close.com/api/overview/api-key-authentication",
     "confidence": "high"
   },
   {
@@ -194,18 +194,19 @@
     "name": "Zendesk",
     "website": "zendesk.com",
     "category": "Support & Helpdesk",
-    "one_line": "Support ticketing / helpdesk suite.",
+    "one_line": "Zendesk is a customer support and helpdesk platform for ticketing and omnichannel service.",
     "auth_methods": [
+      "API Key",
       "OAuth2",
-      "API Key"
+      "Basic"
     ],
     "self_serve": "trial",
-    "self_serve_detail": "API on all plans incl. trial; token + OAuth self-serve.",
-    "api_surface": "REST broad",
+    "self_serve_detail": "Admin generates API tokens in Admin Center → Apps and integrations → APIs → API tokens (token access must be enabled first). Free trial; no human approval. Multi-customer apps must register a global OAuth client.",
+    "api_surface": "REST broad (Support, Talk, Chat, Guide, Help Center)",
     "mcp": "community",
-    "verdict": "ready",
+    "verdict": "buildable-effort",
     "blocker": "",
-    "evidence": "https://developer.zendesk.com/api-reference/",
+    "evidence": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
     "confidence": "high"
   },
   {
@@ -232,15 +233,16 @@
     "name": "Freshdesk",
     "website": "freshdesk.com",
     "category": "Support & Helpdesk",
-    "one_line": "Freshworks helpdesk/ticketing.",
+    "one_line": "Freshdesk is a cloud-based customer support/helpdesk platform with ticketing, omnichannel, and knowledge base.",
     "auth_methods": [
-      "API Key"
+      "API Key",
+      "Basic"
     ],
-    "self_serve": "self-serve",
-    "self_serve_detail": "Free plan includes API key (Basic auth).",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve": "trial",
+    "self_serve_detail": "API key found in user Profile Settings. API access is disabled on the free Sprout plan; a paid plan (Growth/Pro/Enterprise) or trial is required. No human approval.",
+    "api_surface": "REST broad (v2, many resources)",
+    "mcp": "official",
+    "verdict": "buildable-effort",
     "blocker": "",
     "evidence": "https://developers.freshdesk.com/api/",
     "confidence": "high"
@@ -250,18 +252,18 @@
     "name": "Front",
     "website": "front.com",
     "category": "Support & Helpdesk",
-    "one_line": "Shared inbox / customer operations.",
+    "one_line": "Front is a customer operations platform / shared inbox for collaborative support and messaging.",
     "auth_methods": [
       "OAuth2",
-      "API Key"
+      "Bearer/Token"
     ],
-    "self_serve": "paid-only",
-    "self_serve_detail": "Trial/paid; API token self-serve.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
+    "self_serve": "trial",
+    "self_serve_detail": "Company admin generates API tokens in settings, or creates an OAuth app (client ID/secret) in developer settings. Free trial; no human approval. Public integrations must use OAuth.",
+    "api_surface": "REST (Core API broad)",
+    "mcp": "official",
     "verdict": "buildable-effort",
-    "blocker": "Paid plan for API",
-    "evidence": "https://dev.frontapp.com/",
+    "blocker": "",
+    "evidence": "https://dev.frontapp.com/docs/mcp-server",
     "confidence": "high"
   },
   {
@@ -288,55 +290,54 @@
     "name": "LiveAgent",
     "website": "liveagent.com",
     "category": "Support & Helpdesk",
-    "one_line": "Helpdesk + live chat.",
+    "one_line": "LiveAgent is a multichannel help desk, live chat, and call center support software.",
     "auth_methods": [
       "API Key"
     ],
-    "self_serve": "paid-only",
-    "self_serve_detail": "Free trial; API on paid plans.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
+    "self_serve": "trial",
+    "self_serve_detail": "Admin generates an API key in Configuration → System → API (v3). 14-day free trial; no human approval. Built-in MCP access token generated in user profile.",
+    "api_surface": "REST (v3 current, v1 legacy)",
+    "mcp": "official",
     "verdict": "buildable-effort",
-    "blocker": "Paid plan for API",
-    "evidence": "https://support.ladesk.com/",
-    "confidence": "medium"
+    "blocker": "",
+    "evidence": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+    "confidence": "high"
   },
   {
     "id": 17,
     "name": "Plain",
     "website": "plain.com",
     "category": "Support & Helpdesk",
-    "one_line": "Developer-focused customer support API.",
+    "one_line": "API-first customer support and helpdesk platform (GraphQL).",
     "auth_methods": [
       "Bearer/Token"
     ],
-    "self_serve": "gated",
-    "self_serve_detail": "Early-stage; request access for API key.",
-    "api_surface": "API-first (GraphQL)",
-    "mcp": "none",
-    "verdict": "blocked",
-    "blocker": "Request-access; no public self-serve",
-    "evidence": "https://www.plain.com/",
-    "confidence": "medium"
+    "self_serve": "trial",
+    "self_serve_detail": "Start a 7-day free trial (no credit card), create a workspace, then generate an API key at Settings → API Keys; no app review. Sustained API access requires a paid plan after the trial.",
+    "api_surface": "GraphQL broad",
+    "mcp": "official",
+    "verdict": "buildable-effort",
+    "blocker": "",
+    "evidence": "https://www.plain.com/docs/graphql/authentication",
+    "confidence": "high"
   },
   {
     "id": 18,
     "name": "Help Scout",
     "website": "helpscout.com",
     "category": "Support & Helpdesk",
-    "one_line": "Helpdesk for small teams.",
+    "one_line": "Shared-inbox customer support helpdesk with inbox, chat, and docs APIs.",
     "auth_methods": [
-      "OAuth2",
-      "API Key"
+      "OAuth2"
     ],
-    "self_serve": "paid-only",
-    "self_serve_detail": "Trial/paid; API key + OAuth.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
+    "self_serve": "trial",
+    "self_serve_detail": "Create an OAuth2 app at Profile → My Apps (self-serve, no review) to get Client ID/Secret; use client_credentials or auth-code flow. API access is gated to paid plans (free trial, no card; free plan is capped).",
+    "api_surface": "REST broad",
+    "mcp": "community",
     "verdict": "buildable-effort",
-    "blocker": "Paid plan for API",
-    "evidence": "https://developer.helpscout.com/",
-    "confidence": "high"
+    "blocker": "",
+    "evidence": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+    "confidence": "medium"
   },
   {
     "id": 19,
@@ -381,17 +382,17 @@
     "name": "Slack",
     "website": "slack.com",
     "category": "Comms & Messaging",
-    "one_line": "Team messaging platform.",
+    "one_line": "Team messaging and collaboration platform with broad Web/Events APIs.",
     "auth_methods": [
       "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; create Slack app + bot token instantly.",
-    "api_surface": "Web API (REST) very broad",
+    "self_serve_detail": "Create an app at api.slack.com/apps (free, no approval), configure scopes, and install to a workspace to obtain bot/user tokens. Free tier is sufficient for API use.",
+    "api_surface": "REST broad",
     "mcp": "official",
     "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://api.slack.com/",
+    "evidence": "https://docs.slack.dev/authentication/installing-with-oauth",
     "confidence": "high"
   },
   {
@@ -418,74 +419,72 @@
     "name": "Zoho Cliq",
     "website": "zoho.com/cliq",
     "category": "Comms & Messaging",
-    "one_line": "Zoho team chat.",
+    "one_line": "Team chat and collaboration tool within the Zoho suite, with a REST API.",
     "auth_methods": [
-      "OAuth2",
-      "API Key"
+      "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; self-service tokens.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Register an app in the Zoho API Console (self-serve) to get Client ID/Secret, then run the OAuth2 auth-code/refresh-token flow. Free plan includes API support.",
+    "api_surface": "REST broad",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://www.zoho.com/cliq/help/api/",
-    "confidence": "medium"
+    "evidence": "https://www.zoho.com/cliq/help/restapi/v3/oauth/",
+    "confidence": "high"
   },
   {
     "id": 24,
     "name": "Lark (Larksuite)",
     "website": "open.larksuite.com",
     "category": "Comms & Messaging",
-    "one_line": "Collaboration suite (chat/docs/meet).",
+    "one_line": "Enterprise collaboration suite (messaging, docs, calendar) with an Open Platform API.",
     "auth_methods": [
       "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Open platform; create app + credentials free.",
+    "self_serve_detail": "Create a custom app in the Lark Developer Console (free) to get App ID/Secret; obtain a tenant_access_token via app credentials (no user consent needed) or user_access_token via OAuth. Free tier available.",
     "api_surface": "REST broad",
-    "mcp": "none",
-    "verdict": "ready",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://open.larksuite.com/document/",
-    "confidence": "medium"
+    "evidence": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide",
+    "confidence": "high"
   },
   {
     "id": 25,
     "name": "Pumble",
     "website": "pumble.com",
     "category": "Comms & Messaging",
-    "one_line": "Team chat (self-serve).",
+    "one_line": "Team messaging and collaboration platform (Slack alternative) by CAKE.com with an app/API and event system.",
     "auth_methods": [
-      "OAuth2",
-      "Bearer/Token"
+      "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free plan; API token self-serve.",
-    "api_surface": "REST emerging",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Create an app/addon from scratch in Pumble workspace settings (free plan supported), choose user/bot scopes, install, then copy the App key plus user/bot tokens. OAuth2 authorization-code flow; no human approval required.",
+    "api_surface": "REST broad (api-ga.pumble.com v3) plus WebSocket events",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://pumble.com/developers/",
-    "confidence": "medium"
+    "evidence": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/",
+    "confidence": "high"
   },
   {
     "id": 26,
     "name": "Discord",
     "website": "discord.com",
     "category": "Comms & Messaging",
-    "one_line": "Community/gaming chat platform.",
+    "one_line": "Chat/voice/gaming community platform exposing a REST HTTP API plus a WebSocket Gateway for bots and OAuth2 apps.",
     "auth_methods": [
       "OAuth2",
       "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; developer portal bot token + OAuth.",
-    "api_surface": "REST + gateway broad",
+    "self_serve_detail": "Create an app free in the Discord Developer Portal; a bot token is issued instantly and OAuth2 client_id/secret are free. Privileged intents (e.g., message content) require a toggle/approval, but basic API use needs no human review.",
+    "api_surface": "REST broad + WebSocket Gateway",
     "mcp": "community",
-    "verdict": "ready",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://discord.com/developers/docs/intro",
+    "evidence": "https://discord.com/developers/docs/topics/oauth2",
     "confidence": "high"
   },
   {
@@ -493,17 +492,17 @@
     "name": "Telegram",
     "website": "core.telegram.org",
     "category": "Comms & Messaging",
-    "one_line": "Messaging app with Bot API.",
+    "one_line": "Cloud messaging platform whose Bot API lets developers build bots via @BotFather.",
     "auth_methods": [
       "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; create bot via BotFather, get token.",
-    "api_surface": "HTTP Bot API + MTProto",
+    "self_serve_detail": "Message @BotFather with /newbot and immediately receive a free bot token; no approval or review. The token authenticates every Bot API call via https://api.telegram.org/bot<token>/<method>.",
+    "api_surface": "HTTPS Bot API (simple REST-style, broad method coverage)",
     "mcp": "community",
-    "verdict": "ready",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://core.telegram.org/bots/api",
+    "evidence": "https://core.telegram.org/bots/tutorial",
     "confidence": "high"
   },
   {
@@ -568,17 +567,18 @@
     "name": "Google Ads",
     "website": "developers.google.com/google-ads",
     "category": "Marketing, Ads, Email & Social",
-    "one_line": "Google advertising platform API.",
+    "one_line": "Google's advertising API for programmatically managing campaigns, ads, and reporting.",
     "auth_methods": [
-      "OAuth2"
+      "OAuth2",
+      "API Key"
     ],
-    "self_serve": "self-serve",
-    "self_serve_detail": "Free; developer token (basic) self-serve; standard needs ad spend.",
-    "api_surface": "REST/gRPC broad",
-    "mcp": "none",
-    "verdict": "ready",
-    "blocker": "",
-    "evidence": "https://developers.google.com/google-ads/api",
+    "self_serve": "gated",
+    "self_serve_detail": "Sign up for a developer token in the Google Ads API Center (free); Test Account Access is auto-granted with no review. Calling production accounts requires applying for Basic/Standard Access, which needs approval/review (typically 5-10 business days; Explorer Access sometimes auto-granted). The API itself is free to use.",
+    "api_surface": "gRPC/REST broad (GoogleAdsService + many services)",
+    "mcp": "official",
+    "verdict": "buildable-effort",
+    "blocker": "Production access requires App Review approval of the developer token (Basic/Standard Access); only Test Account Access is auto-granted.",
+    "evidence": "https://developers.google.com/google-ads/api/docs/get-started/dev-token",
     "confidence": "high"
   },
   {
@@ -586,17 +586,18 @@
     "name": "Meta Ads",
     "website": "developers.facebook.com/docs/marketing-apis",
     "category": "Marketing, Ads, Email & Social",
-    "one_line": "Facebook/Instagram ads API.",
+    "one_line": "Meta's Marketing API for managing Facebook/Instagram ads, audiences, and reporting.",
     "auth_methods": [
-      "OAuth2"
+      "OAuth2",
+      "Bearer/Token"
     ],
-    "self_serve": "self-serve",
-    "self_serve_detail": "Free; app + system-user token; some permissions need App Review.",
-    "api_surface": "Graph API broad",
-    "mcp": "none",
-    "verdict": "ready",
-    "blocker": "App Review for sensitive ad permissions",
-    "evidence": "https://developers.facebook.com/docs/marketing-apis/",
+    "self_serve": "gated",
+    "self_serve_detail": "Add the Marketing API product to a free Meta app; Limited access is auto-granted and standard access to ads_read/ads_management for your own ad account is auto-approved. Advanced access (managing other businesses' accounts) and Tech Provider status require App Review plus Business Verification. The official MCP (mcp.facebook.com/ads) gives OAuth access to your own account with no App Review.",
+    "api_surface": "Graph API (REST) broad",
+    "mcp": "official",
+    "verdict": "buildable-effort",
+    "blocker": "Advanced access (managing other businesses' ad accounts) and Tech Provider status require App Review + Business Verification; full third-party use is gated, though own-account access via the official MCP needs no review.",
+    "evidence": "https://developers.facebook.com/docs/marketing-api/get-started/authorization/",
     "confidence": "high"
   },
   {
@@ -642,18 +643,18 @@
     "name": "Mailchimp",
     "website": "mailchimp.com/developer",
     "category": "Marketing, Ads, Email & Social",
-    "one_line": "Email marketing platform.",
+    "one_line": "Email marketing platform for campaigns, automation, and audience management",
     "auth_methods": [
       "API Key",
       "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free tier; API key self-serve.",
-    "api_surface": "REST moderate",
+    "self_serve_detail": "Create a (free) Mailchimp account, then generate an API key in Account > API Keys with no human approval; OAuth2 app flow available for third-party access.",
+    "api_surface": "REST broad (Marketing v3, hundreds of endpoints)",
     "mcp": "community",
-    "verdict": "ready",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://mailchimp.com/developer/",
+    "evidence": "https://mailchimp.com/developer/marketing/guides/quick-start/",
     "confidence": "high"
   },
   {
@@ -661,18 +662,18 @@
     "name": "Klaviyo",
     "website": "developers.klaviyo.com",
     "category": "Marketing, Ads, Email & Social",
-    "one_line": "Email/SMS marketing for ecommerce.",
+    "one_line": "Email and SMS marketing automation platform with data-science-driven segmentation",
     "auth_methods": [
       "API Key",
       "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free tier; private API key self-serve.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Log in (free/test account) and generate a private API key or register a public OAuth app; no human approval to obtain credentials.",
+    "api_surface": "REST broad (JSON:API: profiles, lists, campaigns, flows, metrics, catalogs)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developers.klaviyo.com/",
+    "evidence": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
     "confidence": "high"
   },
   {
@@ -699,17 +700,17 @@
     "name": "Pinterest",
     "website": "developers.pinterest.com",
     "category": "Marketing, Ads, Email & Social",
-    "one_line": "Pinterest content/ads API.",
+    "one_line": "Visual discovery and ads platform; API for Pins, Boards, ads, catalogs, and conversions",
     "auth_methods": [
       "OAuth2"
     ],
-    "self_serve": "self-serve",
-    "self_serve_detail": "Free developer account; some ad endpoints need approval.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
-    "blocker": "App review for some ad scopes",
-    "evidence": "https://developers.pinterest.com/",
+    "self_serve": "gated",
+    "self_serve_detail": "Create a business account, accept Developer TOS, then submit a Connect app request form; Trial access (app ID/secret) is granted only after human review (each business day). Standard/production access, including creating Pins, requires a second review with an OAuth demo video.",
+    "api_surface": "REST (v5, tiered scopes)",
+    "mcp": "community",
+    "verdict": "buildable-effort",
+    "blocker": "App review required for Trial access to obtain OAuth credentials; production write endpoints (e.g. Pin creation) require a second Standard-access review with a demo video.",
+    "evidence": "https://developers.pinterest.com/docs/getting-started/connect-app/",
     "confidence": "high"
   },
   {
@@ -735,17 +736,17 @@
     "name": "SendGrid",
     "website": "sendgrid.com",
     "category": "Marketing, Ads, Email & Social",
-    "one_line": "Email delivery API (Twilio).",
+    "one_line": "Transactional and marketing email delivery API (Twilio SendGrid)",
     "auth_methods": [
       "API Key"
     ],
-    "self_serve": "trial",
-    "self_serve_detail": "Free tier; API key self-serve.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve": "self-serve",
+    "self_serve_detail": "Free SendGrid plan lets you create API keys in the dashboard (Settings > API Keys) with scoped permissions; no human approval. Some features (dedicated IP, subusers) need paid tiers.",
+    "api_surface": "REST broad (v3: mail, suppressions, marketing, stats)",
+    "mcp": "community",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://docs.sendgrid.com/api-reference/",
+    "evidence": "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
     "confidence": "high"
   },
   {
@@ -753,18 +754,18 @@
     "name": "Shopify",
     "website": "shopify.dev",
     "category": "Ecommerce",
-    "one_line": "Hosted ecommerce platform.",
+    "one_line": "Ecommerce platform with Admin API for products, orders, customers, and store management",
     "auth_methods": [
       "OAuth2",
       "API Key"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free Partner/dev store; custom app admin token self-serve.",
-    "api_surface": "REST + GraphQL Admin/Storefront broad",
+    "self_serve_detail": "Free Partner account + dev store; create a custom app in the admin to get an access token (X-Shopify-Access-Token) with no approval, or build a public app via OAuth. No paid plan required to obtain credentials.",
+    "api_surface": "GraphQL broad + REST (legacy)",
     "mcp": "community",
     "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://shopify.dev/docs/api",
+    "evidence": "https://shopify.dev/docs/api/admin-rest",
     "confidence": "high"
   },
   {
@@ -772,16 +773,16 @@
     "name": "WooCommerce",
     "website": "woocommerce.com/document/woocommerce-rest-api",
     "category": "Ecommerce",
-    "one_line": "WordPress ecommerce plugin (open source).",
+    "one_line": "Open-source WordPress ecommerce plugin with a built-in REST API.",
     "auth_methods": [
       "API Key",
       "Basic"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Self-hosted free; consumer key/secret (Basic/OAuth1).",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Free core plugin; generate Consumer Key/Secret in WooCommerce > Settings > Advanced > REST API with Read/Write perms in your own store, no cost or approval.",
+    "api_surface": "REST broad (products, orders, customers, reports, webhooks)",
+    "mcp": "community",
+    "verdict": "ready-mcp",
     "blocker": "",
     "evidence": "https://woocommerce.com/document/woocommerce-rest-api/",
     "confidence": "high"
@@ -791,18 +792,18 @@
     "name": "BigCommerce",
     "website": "developer.bigcommerce.com",
     "category": "Ecommerce",
-    "one_line": "SaaS ecommerce platform.",
+    "one_line": "Hosted SaaS ecommerce platform with REST and GraphQL APIs.",
     "auth_methods": [
       "OAuth2",
-      "Bearer/Token"
+      "API Key"
     ],
     "self_serve": "trial",
-    "self_serve_detail": "Free trial; API token + OAuth.",
-    "api_surface": "REST + GraphQL broad",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Sign up for a free trial store, then create store-level API account in Settings > API Accounts to get a static access_token (X-Auth-Token); no approval, but live production needs a paid plan. App-level OAuth2 via Developer Portal for public apps.",
+    "api_surface": "REST broad + GraphQL (Admin & Storefront)",
+    "mcp": "community",
+    "verdict": "buildable-effort",
     "blocker": "",
-    "evidence": "https://developer.bigcommerce.com/",
+    "evidence": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
     "confidence": "high"
   },
   {
@@ -829,18 +830,19 @@
     "name": "Magento (Adobe Commerce)",
     "website": "developer.adobe.com/commerce",
     "category": "Ecommerce",
-    "one_line": "Open-source/enterprise ecommerce.",
+    "one_line": "Enterprise ecommerce platform (Adobe Commerce PaaS/SaaS and free Magento Open Source).",
     "auth_methods": [
+      "OAuth2",
       "API Key",
-      "OAuth2"
+      "Bearer/Token"
     ],
-    "self_serve": "self-serve",
-    "self_serve_detail": "Open-source Magento self-host free (integration tokens).",
-    "api_surface": "REST/GraphQL + Adobe Commerce",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve": "paid-only",
+    "self_serve_detail": "Adobe Commerce proper requires a paid license. Magento Open Source is free and self-hostable: create an Integration in Admin (System > Integrations) to get OAuth 1.0a consumer key/secret + access token/secret with no approval.",
+    "api_surface": "REST broad + GraphQL (catalog, sales, customers, CMS)",
+    "mcp": "community",
+    "verdict": "buildable-effort",
     "blocker": "",
-    "evidence": "https://developer.adobe.com/commerce/",
+    "evidence": "https://developer.adobe.com/commerce/webapi/rest/",
     "confidence": "high"
   },
   {
@@ -867,18 +869,19 @@
     "name": "Ecwid",
     "website": "api-docs.ecwid.com",
     "category": "Ecommerce",
-    "one_line": "SaaS storefront for SMBs.",
+    "one_line": "Lightspeed-owned hosted ecommerce platform with a REST API.",
     "auth_methods": [
+      "Bearer/Token",
       "OAuth2",
-      "Bearer/Token"
+      "API Key"
     ],
-    "self_serve": "self-serve",
-    "self_serve_detail": "Free store; API token self-serve.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve": "paid-only",
+    "self_serve_detail": "API access requires a paid store plan (Venture/Business/Unlimited). A custom app in the store's app dashboard yields non-expiring secret/public tokens (Bearer) and client_id/secret; developers can email Ecwid for a free dev-plan upgrade, but no fully open free self-serve path.",
+    "api_surface": "REST broad (catalog, orders, customers, payments, shipping)",
+    "mcp": "community",
+    "verdict": "buildable-effort",
     "blocker": "",
-    "evidence": "https://api-docs.ecwid.com/",
+    "evidence": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
     "confidence": "high"
   },
   {
@@ -886,18 +889,18 @@
     "name": "Gumroad",
     "website": "gumroad.com/api",
     "category": "Ecommerce",
-    "one_line": "Sell digital products directly.",
+    "one_line": "Creator-commerce platform for selling digital products and memberships.",
     "auth_methods": [
-      "API Key",
-      "OAuth2"
+      "OAuth2",
+      "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; personal access token.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Free: create an application in account Settings > Advanced > Applications and generate an access token (Bearer) instantly; no approval or paid plan required. OAuth2 flows (auth code, password, client credentials) also supported.",
+    "api_surface": "REST limited (products, sales, subscriptions, licenses)",
+    "mcp": "community",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://gumroad.com/api",
+    "evidence": "https://www.mintlify.com/antiwork/gumroad/api/authentication",
     "confidence": "high"
   },
   {
@@ -960,18 +963,18 @@
     "name": "SE Ranking",
     "website": "seranking.com/api",
     "category": "Data, SEO & Scraping",
-    "one_line": "SEO platform with API.",
+    "one_line": "SEO platform exposing a Data API (keywords, backlinks, domains, AI search) and Project API for managing SEO campaigns.",
     "auth_methods": [
-      "Bearer/Token"
+      "API Key"
     ],
-    "self_serve": "paid-only",
-    "self_serve_detail": "Paid plans; API key.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
+    "self_serve": "trial",
+    "self_serve_detail": "Start a 14-day free trial that includes 100,000 free API credits; generate the API key from the API Dashboard (Profile & Preferences > API Dashboard). Sustained/production Data API access requires an Essential+ paid plan (monthly credit allowance) or a standalone API plan (from $2,148/yr). No human approval needed.",
+    "api_surface": "REST broad (Data API + Project API)",
+    "mcp": "official",
     "verdict": "buildable-effort",
-    "blocker": "Paid plan for API",
-    "evidence": "https://seranking.com/api.html",
-    "confidence": "medium"
+    "blocker": "",
+    "evidence": "https://seranking.com/api/how-to-get-api/",
+    "confidence": "high"
   },
   {
     "id": 53,
@@ -996,36 +999,35 @@
     "name": "MrScraper",
     "website": "docs.mrscraper.com",
     "category": "Data, SEO & Scraping",
-    "one_line": "Managed web scraping API.",
+    "one_line": "AI-powered web scraping platform with a REST API and hosted MCP server for natural-language data extraction.",
     "auth_methods": [
-      "API Key"
+      "Bearer/Token"
     ],
-    "self_serve": "self-serve",
-    "self_serve_detail": "Signup; API key + credits.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve": "trial",
+    "self_serve_detail": "Sign up at the dashboard; an API token is auto-created (also generate new tokens under profile > API Tokens). Authenticate via x-api-token header or Authorization: Bearer. New accounts include free trial credits; ongoing scraping consumes plan tokens, so real volume requires a paid plan.",
+    "api_surface": "REST (hosted v1 at api.app.mrscraper.com)",
+    "mcp": "official",
+    "verdict": "buildable-effort",
     "blocker": "",
-    "evidence": "https://docs.mrscraper.com/",
-    "confidence": "medium"
+    "evidence": "https://docs.mrscraper.com/docs/getting-started/api-token",
+    "confidence": "high"
   },
   {
     "id": 55,
     "name": "Apify",
     "website": "docs.apify.com",
     "category": "Data, SEO & Scraping",
-    "one_line": "Scraping/automation platform + Actor store.",
+    "one_line": "Web scraping and automation platform exposing a REST API to run Actors and read datasets/key-value stores.",
     "auth_methods": [
-      "Bearer/Token",
-      "OAuth2"
+      "Bearer/Token"
     ],
-    "self_serve": "trial",
-    "self_serve_detail": "Free credits; API token self-serve.",
+    "self_serve": "self-serve",
+    "self_serve_detail": "Create a free account (no card) that includes $5 of free platform credit; grab the API token from the Integrations page in Apify Console. Token is used as Authorization: Bearer or ?token= query param. Usage beyond free credit is pay-as-you-go.",
     "api_surface": "REST broad",
-    "mcp": "none",
-    "verdict": "ready",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://docs.apify.com/",
+    "evidence": "https://docs.apify.com/api/v2",
     "confidence": "high"
   },
   {
@@ -1033,17 +1035,17 @@
     "name": "Firecrawl",
     "website": "firecrawl.dev",
     "category": "Data, SEO & Scraping",
-    "one_line": "LLM-ready web scraping/data API.",
+    "one_line": "API to scrape, crawl, and extract structured/LLM-ready web data with built-in anti-bot and JS rendering.",
     "auth_methods": [
-      "API Key"
+      "Bearer/Token"
     ],
-    "self_serve": "trial",
-    "self_serve_detail": "Free tier; API key self-serve.",
-    "api_surface": "REST moderate",
-    "mcp": "community",
-    "verdict": "ready",
+    "self_serve": "self-serve",
+    "self_serve_detail": "Create a free account to get an API key (fc-...) from firecrawl.dev/app/api-keys; also offers a keyless free tier (rate-limited per IP) on the API and MCP. Authenticate with Authorization: Bearer fc-KEY. Paid plans raise rate limits and tool access.",
+    "api_surface": "REST (v2)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://docs.firecrawl.dev/",
+    "evidence": "https://docs.firecrawl.dev/api-reference/introduction",
     "confidence": "high"
   },
   {
@@ -1051,17 +1053,18 @@
     "name": "Bright Data",
     "website": "brightdata.com",
     "category": "Data, SEO & Scraping",
-    "one_line": "Proxies + scraping infra.",
+    "one_line": "Proxy and web-data platform providing scraping, SERP, Web Unlocker APIs and a managed remote MCP server.",
     "auth_methods": [
-      "API Key"
+      "API Key",
+      "Bearer/Token"
     ],
-    "self_serve": "trial",
-    "self_serve_detail": "Free trial (card); API key + zone.",
+    "self_serve": "self-serve",
+    "self_serve_detail": "Create a Bright Data account; an API token is auto-generated (also in user settings). New users receive free credit for testing (MCP includes 5,000 free requests/month). Authenticate via Authorization: Bearer or token query param. Pay-as-you-go after free credit.",
     "api_surface": "REST broad",
-    "mcp": "none",
-    "verdict": "ready",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://brightdata.com/",
+    "evidence": "https://docs.brightdata.com/ai/mcp-server/overview.md",
     "confidence": "high"
   },
   {
@@ -1069,15 +1072,15 @@
     "name": "Sherlock",
     "website": "github.com/sherlock-project/sherlock",
     "category": "Data, SEO & Scraping",
-    "one_line": "Open-source username OSINT scanner.",
+    "one_line": "Open-source CLI that finds a username across 400+ social networks (OSINT).",
     "auth_methods": [
       "None"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Open-source CLI; no auth (public lookups).",
-    "api_surface": "None (CLI, scrapes public sites)",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "No account or key needed: install via pipx install sherlock-project or run the Docker image. It is a local Python CLI with no hosted API or credentials.",
+    "api_surface": "No hosted API; Python CLI only",
+    "mcp": "community",
+    "verdict": "buildable-effort",
     "blocker": "",
     "evidence": "https://github.com/sherlock-project/sherlock",
     "confidence": "high"
@@ -1123,18 +1126,18 @@
     "name": "GitHub",
     "website": "docs.github.com/rest",
     "category": "Dev, Infra & Data Platforms",
-    "one_line": "Code hosting / DevOps platform.",
+    "one_line": "Git-based source-control and developer platform with repos, issues, PRs, and CI.",
     "auth_methods": [
       "OAuth2",
       "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; PAT + OAuth apps instantly.",
-    "api_surface": "REST + GraphQL very broad",
+    "self_serve_detail": "Free GitHub account; generate a Personal Access Token (classic or fine-grained) in Settings > Developer settings with no approval. OAuth Apps / GitHub Apps for acting on behalf of users.",
+    "api_surface": "REST broad + GraphQL + webhooks",
     "mcp": "official",
     "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://docs.github.com/rest",
+    "evidence": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
     "confidence": "high"
   },
   {
@@ -1161,18 +1164,18 @@
     "name": "Netlify",
     "website": "docs.netlify.com/api",
     "category": "Dev, Infra & Data Platforms",
-    "one_line": "Web hosting / CI platform.",
+    "one_line": "Hosting/platform for building, deploying, and serving web apps and static sites.",
     "auth_methods": [
       "OAuth2",
       "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; personal access token.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Free account; generate a Personal Access Token (Bearer) in User Settings > Applications > Personal access tokens, no approval. Register an OAuth app for public integrations.",
+    "api_surface": "REST broad (api.netlify.com/api/v1)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://docs.netlify.com/api/",
+    "evidence": "https://docs.netlify.com/api/get-started",
     "confidence": "high"
   },
   {
@@ -1180,18 +1183,18 @@
     "name": "Cloudflare",
     "website": "developers.cloudflare.com/api",
     "category": "Dev, Infra & Data Platforms",
-    "one_line": "CDN / edge / zero-trust platform.",
+    "one_line": "CDN, DNS, security, and edge/compute platform (Workers, R2, etc.).",
     "auth_methods": [
       "API Key",
       "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; API token self-serve.",
-    "api_surface": "REST very broad",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Free account; create API Tokens (Bearer) in My Profile > API Tokens, or use the Global API Key + email header. No human approval required.",
+    "api_surface": "REST broad (api.cloudflare.com/client/v4)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developers.cloudflare.com/api/",
+    "evidence": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
     "confidence": "high"
   },
   {
@@ -1199,16 +1202,16 @@
     "name": "Supabase",
     "website": "supabase.com/docs",
     "category": "Dev, Infra & Data Platforms",
-    "one_line": "Open-source Firebase alternative (Postgres).",
+    "one_line": "Open-source Firebase alternative: hosted Postgres, Auth, Storage, and Edge Functions.",
     "auth_methods": [
       "API Key",
       "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free tier; anon + service keys.",
-    "api_surface": "REST + GraphQL + Realtime",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Free project; API keys (anon publishable + service_role secret JWT) are shown in Project Settings > API Keys, no approval. Personal Access Token for the Management API in account tokens.",
+    "api_surface": "REST (PostgREST) + GraphQL + Auth/Management APIs",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
     "evidence": "https://supabase.com/docs/guides/api",
     "confidence": "high"
@@ -1276,18 +1279,17 @@
     "name": "Datadog",
     "website": "docs.datadoghq.com/api",
     "category": "Dev, Infra & Data Platforms",
-    "one_line": "Observability / monitoring.",
+    "one_line": "Cloud-scale monitoring, observability, and security analytics platform.",
     "auth_methods": [
-      "API Key",
-      "Bearer/Token"
+      "API Key"
     ],
-    "self_serve": "trial",
-    "self_serve_detail": "Free trial; API + APP key.",
-    "api_surface": "REST broad",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve": "self-serve",
+    "self_serve_detail": "Free-tier account (no card) via signup; generate API key (DD-API-KEY) and Application key (DD-APPLICATION-KEY) in Organization Settings > API Keys / Application Keys. Both headers sent per request.",
+    "api_surface": "REST broad (v1/v2, metrics, logs, monitors, dashboards, incidents, security)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://docs.datadoghq.com/api/",
+    "evidence": "https://docs.datadoghq.com/bits_ai/mcp_server/",
     "confidence": "high"
   },
   {
@@ -1295,18 +1297,18 @@
     "name": "Sentry",
     "website": "docs.sentry.io/api",
     "category": "Dev, Infra & Data Platforms",
-    "one_line": "Error/crash monitoring.",
+    "one_line": "Error tracking, crash reporting, and application performance monitoring for developers.",
     "auth_methods": [
       "Bearer/Token",
       "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free developer tier; auth token.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Free-tier account via signup; create a personal/org auth token (Sentry-Bearer) at Settings > User > API Auth Tokens or via internal integration. OAuth2 app also self-serve for third-party apps.",
+    "api_surface": "REST broad (issues, events, projects, orgs, releases)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://docs.sentry.io/api/",
+    "evidence": "https://github.com/getsentry/sentry-mcp",
     "confidence": "high"
   },
   {
@@ -1314,18 +1316,18 @@
     "name": "Notion",
     "website": "developers.notion.com",
     "category": "Productivity & PM",
-    "one_line": "Docs/wiki/workspace DB.",
+    "one_line": "All-in-one workspace for notes, docs, databases, and project wikis.",
     "auth_methods": [
-      "OAuth2",
-      "Bearer/Token"
+      "Bearer/Token",
+      "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; internal integration token + OAuth.",
-    "api_surface": "REST moderate",
+    "self_serve_detail": "Free account; create a personal access token (ntn_*) at notion.so/developers/tokens or an internal integration token at notion.so/profile/integrations. OAuth for public apps. Business/Enterprise may restrict PAT creation by policy.",
+    "api_surface": "REST broad (pages, databases, blocks, users, comments, search)",
     "mcp": "official",
     "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developers.notion.com/",
+    "evidence": "https://developers.notion.com/guides/mcp/overview",
     "confidence": "high"
   },
   {
@@ -1352,18 +1354,18 @@
     "name": "Linear",
     "website": "developers.linear.app",
     "category": "Productivity & PM",
-    "one_line": "Issue tracking for engineering.",
+    "one_line": "Fast issue tracking and project management tool for software teams.",
     "auth_methods": [
       "OAuth2",
-      "Bearer/Token"
+      "API Key"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free plan; API key + OAuth.",
-    "api_surface": "GraphQL broad",
-    "mcp": "community",
-    "verdict": "ready",
+    "self_serve_detail": "Free plan includes API access; generate a personal API key (lin_api_*) at Settings > Account > Security & Access, or create an OAuth2 app at Settings > API > Applications for user-delegated access.",
+    "api_surface": "GraphQL (single broad graph; issues, projects, teams, comments)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developers.linear.app/",
+    "evidence": "https://linear.app/docs/mcp",
     "confidence": "high"
   },
   {
@@ -1371,18 +1373,18 @@
     "name": "Jira",
     "website": "developer.atlassian.com",
     "category": "Productivity & PM",
-    "one_line": "Issue/project tracking (Atlassian).",
+    "one_line": "Atlassian's issue tracking and agile project management platform.",
     "auth_methods": [
-      "OAuth2",
-      "Bearer/Token"
+      "API Key",
+      "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free tier; API token + OAuth.",
-    "api_surface": "REST + GraphQL broad",
-    "mcp": "community",
-    "verdict": "ready",
+    "self_serve_detail": "Free Atlassian Cloud tier; create an API token (Basic auth: email + token) at id.atlassian.com/manage-profile/security/api-tokens. OAuth 2.0 (3LO / client credentials) self-serve via developer.atlassian.com. MCP API-token auth needs an org admin to enable the Rovo MCP setting; OAuth path is self-serve.",
+    "api_surface": "REST broad (Cloud REST v3, JQL, Agile, Service Management)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+    "evidence": "https://github.com/atlassian/atlassian-mcp-server",
     "confidence": "high"
   },
   {
@@ -1390,18 +1392,18 @@
     "name": "Asana",
     "website": "developers.asana.com",
     "category": "Productivity & PM",
-    "one_line": "Work/project management.",
+    "one_line": "Work management platform for planning, tracking, and managing tasks and projects.",
     "auth_methods": [
       "OAuth2",
       "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free plan; PAT + OAuth.",
-    "api_surface": "REST moderate",
-    "mcp": "community",
-    "verdict": "ready",
+    "self_serve_detail": "Generate a Personal Access Token (PAT) in the Asana developer console (app.asana.com/0/my-apps) after free sign-up; OAuth apps also registered there with no human approval or review.",
+    "api_surface": "REST broad",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developers.asana.com/docs",
+    "evidence": "https://developers.asana.com/docs/authentication",
     "confidence": "high"
   },
   {
@@ -1448,18 +1450,17 @@
     "name": "Coda",
     "website": "coda.io/developers",
     "category": "Productivity & PM",
-    "one_line": "Doc + table workspace.",
+    "one_line": "Document and workspace collaboration tool (now Superhuman Docs) with docs, tables, and apps.",
     "auth_methods": [
-      "OAuth2",
       "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; API token + OAuth.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Generate a free API token from coda.io/account API settings; the API is free for all users in both free and paid workspaces, no approval required.",
+    "api_surface": "REST broad",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://coda.io/developers/",
+    "evidence": "https://coda.io/developers/apis/v1",
     "confidence": "high"
   },
   {
@@ -1486,18 +1487,18 @@
     "name": "Harvest",
     "website": "help.getharvest.com/api-v2",
     "category": "Productivity & PM",
-    "one_line": "Time tracking + invoicing.",
+    "one_line": "Time tracking and invoicing software for teams and freelancers.",
     "auth_methods": [
-      "Bearer/Token",
-      "OAuth2"
+      "OAuth2",
+      "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free plan; PAT + OAuth.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Create a free Harvest account (a forever-free plan is available) and generate a Personal Access Token at id.getharvest.com/developers; OAuth2 app registration is also free, with no approval.",
+    "api_surface": "REST broad",
+    "mcp": "community",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://help.getharvest.com/api-v2/",
+    "evidence": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
     "confidence": "high"
   },
   {
@@ -1505,18 +1506,18 @@
     "name": "Stripe",
     "website": "stripe.com/docs/api",
     "category": "Finance & Fintech",
-    "one_line": "Payments / billing platform.",
+    "one_line": "Online payment processing and financial infrastructure platform.",
     "auth_methods": [
       "API Key",
-      "OAuth2"
+      "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free; API keys instantly; Connect OAuth for platforms.",
-    "api_surface": "REST very broad",
-    "mcp": "community",
+    "self_serve_detail": "Sign up for a free Stripe account and grab test-mode API keys (sk_test_) from the Dashboard immediately; no paid plan or approval needed for test/sandbox use (live mode requires account activation).",
+    "api_surface": "REST broad",
+    "mcp": "official",
     "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://stripe.com/docs/api",
+    "evidence": "https://stripe.com/docs/api/authentication",
     "confidence": "high"
   },
   {
@@ -1543,18 +1544,18 @@
     "name": "Binance",
     "website": "binance-docs.github.io",
     "category": "Finance & Fintech",
-    "one_line": "Crypto exchange.",
+    "one_line": "Cryptocurrency exchange offering spot, margin, futures, and market-data APIs.",
     "auth_methods": [
       "API Key",
-      "Basic"
+      "None"
     ],
-    "self_serve": "self-serve",
-    "self_serve_detail": "Free account; API key + HMAC signature.",
-    "api_surface": "REST broad",
-    "mcp": "none",
-    "verdict": "ready",
-    "blocker": "",
-    "evidence": "https://binance-docs.github.io/apidocs/",
+    "self_serve": "gated",
+    "self_serve_detail": "To create API keys you must register a Binance account, enable 2FA, complete identity verification (KYC), and make a deposit to activate the account, then generate HMAC/Ed25519 keys in API Management. Public market-data endpoints are open with no auth.",
+    "api_surface": "REST broad + WebSocket",
+    "mcp": "community",
+    "verdict": "buildable-effort",
+    "blocker": "API key issuance is gated behind KYC identity verification, 2FA, and a deposit to activate the account (per Binance support FAQ).",
+    "evidence": "https://www.binance.com/en/support/faq/detail/360002502072",
     "confidence": "high"
   },
   {
@@ -1580,17 +1581,17 @@
     "name": "iPayX",
     "website": "ipayx.ai/docs",
     "category": "Finance & Fintech",
-    "one_line": "AI payments / payouts platform.",
+    "one_line": "Rail-agnostic FX forensic audit layer that detects hidden bank markups on B2B cross-border payments.",
     "auth_methods": [
-      "API Key"
+      "Bearer/Token"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Developer signup; API key (docs present).",
-    "api_surface": "REST emerging",
-    "mcp": "none",
-    "verdict": "buildable-effort",
-    "blocker": "Validate production access",
-    "evidence": "https://ipayx.ai/docs",
+    "self_serve_detail": "Get a free API key/Bearer token from ipayx.ai; mid-market rate tools work with no key, but live provider comparisons and full forensic reports require the free Bearer token from the dashboard.",
+    "api_surface": "REST limited (FX audit only)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
+    "blocker": "",
+    "evidence": "https://github.com/iPAYX-Technologies/mcp-fx-audit",
     "confidence": "medium"
   },
   {
@@ -1598,17 +1599,17 @@
     "name": "QuickBooks",
     "website": "developer.intuit.com",
     "category": "Finance & Fintech",
-    "one_line": "Small-business accounting (Intuit).",
+    "one_line": "Cloud accounting/bookkeeping platform with a broad REST + GraphQL API for QuickBooks Online.",
     "auth_methods": [
       "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free developer sandbox + app; OAuth self-serve.",
-    "api_surface": "REST broad",
-    "mcp": "community",
-    "verdict": "ready",
+    "self_serve_detail": "Create a free Intuit Developer account, create an app to get Client ID/Secret, and use free sandbox companies + the OAuth 2.0 Playground for testing; production keys require app review only if you publish to the app store.",
+    "api_surface": "REST broad (+GraphQL), many entities & reports",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developer.intuit.com/app/developer/qbo/docs/get-started",
+    "evidence": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0",
     "confidence": "high"
   },
   {
@@ -1616,17 +1617,17 @@
     "name": "Xero",
     "website": "developer.xero.com",
     "category": "Finance & Fintech",
-    "one_line": "Cloud accounting (ANZ/global).",
+    "one_line": "Cloud accounting platform with a broad REST API for small-business finance and payroll.",
     "auth_methods": [
       "OAuth2"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Free partner/dev account + demo company; OAuth.",
-    "api_surface": "REST broad",
-    "mcp": "community",
-    "verdict": "ready",
+    "self_serve_detail": "Sign up for a free Xero developer account, register an app to get client id/secret, and develop against the free demo company; OAuth 2.0 is required for all new integrations.",
+    "api_surface": "REST broad (accounting, payroll, etc.)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://developer.xero.com/",
+    "evidence": "https://developer.xero.com/faq/getting-started",
     "confidence": "high"
   },
   {
@@ -1653,18 +1654,18 @@
     "name": "Ramp",
     "website": "docs.ramp.com",
     "category": "Finance & Fintech",
-    "one_line": "Corporate cards / finance automation.",
+    "one_line": "Corporate cards and spend-management platform with a developer API for expenses, bills, reimbursements, and travel.",
     "auth_methods": [
       "OAuth2",
-      "Bearer/Token"
+      "Basic"
     ],
-    "self_serve": "gated",
-    "self_serve_detail": "API keys self-serve in Ramp Dashboard by admins, but only for approved/verified Ramp customers (developer program + approval).",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "buildable-effort",
-    "blocker": "Requires an approved/verified Ramp business account to obtain API keys (customer-only).",
-    "evidence": "https://docs.ramp.com/",
+    "self_serve": "self-serve",
+    "self_serve_detail": "In a Ramp account (free for businesses; admin access) go to Company → Developer → Create New App for Client ID/Secret; Client Credentials grant for own-org access, sandbox via demo-api.ramp.com. Third-party multi-org connections use the partner Applications flow.",
+    "api_surface": "REST broad (expenses, bills, reimbursements, travel, apps)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
+    "blocker": "",
+    "evidence": "https://docs.ramp.com/llms-guides/getting-started.txt",
     "confidence": "high"
   },
   {
@@ -1709,18 +1710,17 @@
     "name": "Otter AI",
     "website": "help.otter.ai",
     "category": "AI, Research & Media",
-    "one_line": "Meeting transcription assistant.",
+    "one_line": "AI meeting notetaker that transcribes, summarizes, and extracts action items from conversations.",
     "auth_methods": [
-      "OAuth2",
-      "API Key"
+      "Bearer/Token"
     ],
-    "self_serve": "paid-only",
-    "self_serve_detail": "Paid plans; MCP server available; API in higher tiers.",
-    "api_surface": "REST + MCP server",
+    "self_serve": "gated",
+    "self_serve_detail": "Public API is limited to Enterprise workspaces; API keys are created self-serve under Integrations → Developer, but access must be enabled by your Otter account manager if the feature is not visible in your workspace.",
+    "api_surface": "REST limited (channels, conversations, transcripts, audio, webhooks)",
     "mcp": "official",
     "verdict": "buildable-effort",
-    "blocker": "Paid plan for API",
-    "evidence": "https://help.otter.ai/",
+    "blocker": "Requires an Enterprise (paid) Otter workspace and account-manager enablement to access the API.",
+    "evidence": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
     "confidence": "medium"
   },
   {
@@ -1748,35 +1748,37 @@
     "name": "Consensus",
     "website": "consensus.app",
     "category": "AI, Research & Media",
-    "one_line": "AI research/evidence search.",
+    "one_line": "AI search engine that returns cited, peer-reviewed research papers via API and MCP.",
     "auth_methods": [
-      "OAuth2"
+      "API Key",
+      "Bearer/Token"
     ],
     "self_serve": "gated",
-    "self_serve_detail": "API access by request (early).",
-    "api_surface": "REST (request-based)",
-    "mcp": "none",
-    "verdict": "blocked",
-    "blocker": "API access request only",
-    "evidence": "https://consensus.app/",
-    "confidence": "medium"
+    "self_serve_detail": "API is application-only with a custom quote (baseline ~$0.10/call + platform fee); submit a request-access form, no self-serve key issuance. The MCP is free and needs no account to try.",
+    "api_surface": "REST limited (v1 quick_search paper query)",
+    "mcp": "official",
+    "verdict": "buildable-effort",
+    "blocker": "",
+    "evidence": "https://consensus.app/home/api/",
+    "confidence": "high"
   },
   {
     "id": 95,
     "name": "Reducto",
     "website": "reducto.ai",
     "category": "AI, Research & Media",
-    "one_line": "Document parsing / extraction API.",
+    "one_line": "Agentic document-processing API for parsing, extracting, splitting, classifying and editing PDFs/files.",
     "auth_methods": [
+      "Bearer/Token",
       "API Key"
     ],
-    "self_serve": "trial",
-    "self_serve_detail": "Free tier; API key self-serve.",
-    "api_surface": "REST moderate",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve": "self-serve",
+    "self_serve_detail": "Sign up for a free studio.reducto.ai account, create an API key in the sidebar (free tier + pay-as-you-go Standard plan). No approval needed.",
+    "api_surface": "REST broad (parse, extract, split, classify, edit, upload)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://docs.reducto.ai/",
+    "evidence": "https://docs.reducto.ai/quickstart",
     "confidence": "high"
   },
   {
@@ -1784,17 +1786,17 @@
     "name": "Devin",
     "website": "docs.devin.ai",
     "category": "AI, Research & Media",
-    "one_line": "Autonomous AI software engineer.",
+    "one_line": "AI software engineer; API manages sessions, knowledge, playbooks and orchestration programmatically.",
     "auth_methods": [
-      "API Key"
+      "Bearer/Token"
     ],
     "self_serve": "paid-only",
-    "self_serve_detail": "Paid; API key + MCP server.",
-    "api_surface": "REST + MCP server",
+    "self_serve_detail": "Requires a Devin (paid) account/org; in Settings > Service users create a service user and generate a cog_ API key. Service user keys are generally available; personal access tokens are closed beta (contact support).",
+    "api_surface": "REST broad (v3 orgs/enterprise: sessions, knowledge, playbooks, schedules)",
     "mcp": "official",
     "verdict": "buildable-effort",
-    "blocker": "Paid plan; MCP available",
-    "evidence": "https://docs.devin.ai/",
+    "blocker": "",
+    "evidence": "https://docs.devin.ai/api-reference/getting-started/teams-quickstart",
     "confidence": "medium"
   },
   {
@@ -1802,17 +1804,18 @@
     "name": "higgsfield",
     "website": "higgsfield.ai/cli",
     "category": "AI, Research & Media",
-    "one_line": "AI video/content creation suite (CLI).",
+    "one_line": "AI media generation platform (images, video, 3D, audio) via CLI, REST Cloud API and MCP.",
     "auth_methods": [
+      "OAuth2",
       "API Key"
     ],
     "self_serve": "self-serve",
-    "self_serve_detail": "Signup; CLI token.",
-    "api_surface": "CLI + REST emerging",
-    "mcp": "none",
-    "verdict": "ready",
+    "self_serve_detail": "Sign up for a free Higgsfield account (new accounts get free credits); CLI higgsfield auth login or Cloud API key/secret from cloud.higgsfield.ai. Paid plans unlock higher volume/longer durations/broader models.",
+    "api_surface": "REST broad (per-model generate, soul, upload, voices) + CLI",
+    "mcp": "official",
+    "verdict": "ready-mcp",
     "blocker": "",
-    "evidence": "https://higgsfield.ai/cli",
+    "evidence": "https://higgsfield.ai/mcp",
     "confidence": "medium"
   },
   {
@@ -1838,18 +1841,19 @@
     "name": "YouTube Transcript",
     "website": "transcriptapi.com",
     "category": "AI, Research & Media",
-    "one_line": "YouTube transcript fetch API.",
+    "one_line": "Managed API to extract YouTube transcripts plus search, channel and playlist endpoints.",
     "auth_methods": [
-      "API Key"
+      "Bearer/Token",
+      "OAuth2"
     ],
-    "self_serve": "paid-only",
-    "self_serve_detail": "Signup/credits; API key (paid).",
-    "api_surface": "REST narrow",
-    "mcp": "none",
-    "verdict": "buildable-effort",
-    "blocker": "Paid credits for API",
-    "evidence": "https://transcriptapi.com/",
-    "confidence": "medium"
+    "self_serve": "self-serve",
+    "self_serve_detail": "Free signup with 100 free credits; API key issued instantly in dashboard (Bearer token). Paid plans only needed when free credits run out; no approval required.",
+    "api_surface": "REST broad (transcript, info, search, channel, playlist)",
+    "mcp": "official",
+    "verdict": "ready-mcp",
+    "blocker": "",
+    "evidence": "https://transcriptapi.com/docs/api/",
+    "confidence": "high"
   },
   {
     "id": 100,
