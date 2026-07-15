@@ -32,9 +32,10 @@ def test_verification_metrics_present():
     with open(os.path.join(ROOT, "data", "verification.json"), encoding="utf-8") as f:
         ver = json.load(f)
     m = ver["metrics"]
-    assert m["sample_size"] == 40
+    assert m["sample_size"] == 100
+    assert m["coverage"] == "full 100-app web verification"
     assert m["firstpass_blocked_precision"] < 0.5, "expected first pass to over-call 'blocked'"
-    assert m["corrected_blocked_precision"] == 1.0
+    assert m["firstpass_blocked_recall"] == 1.0
 
 
 def test_build_report_runs():
