@@ -144,16 +144,16 @@ footer .mono{font-family:var(--mono);font-size:11px}
 
 <!-- HERO -->
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">Research run &middot; 100 apps &middot; 10 categories &middot; 2 agent waves</div>
+  <div class="eyebrow">Research run &middot; 100 apps &middot; 10 categories &middot; 12 verification waves</div>
   <h1>Most apps <em>can</em> become agent toolkits. The blocker is rarely the API &mdash; it's the <em>gate</em>.</h1>
-  <p class="sub">We researched 100 apps Composio customers ask for: auth model, self-serve vs gated credentials, API surface, and whether an agent toolkit is buildable today. The headline &mdash; <b>64%</b> are buildable now, only <b>3</b> are truly blocked &mdash; came from an agent pipeline, not hand work, and was hardened by a verification loop that caught a 6&times; over-count of &ldquo;blocked.&rdquo;</p>
+  <p class="sub">We researched 100 apps Composio customers ask for: auth model, self-serve vs gated credentials, API surface, and whether an agent toolkit is buildable today. The headline &mdash; <b>64%</b> are buildable now, only <b>3</b> are truly blocked &mdash; came from an agent pipeline, not hand work, and was hardened by a verification loop that caught a ~7&times; over-count of &ldquo;blocked.&rdquo;</p>
   <div class="statline">
     <div class="stat"><b>64</b><span>Buildable now</span></div>
     <div class="stat"><b>33</b><span>With effort / paid</span></div>
     <div class="stat"><b>3</b><span>Blocked (outreach)</span></div>
     <div class="stat"><b>95</b><span>Have an MCP server</span></div>
     <div class="stat"><b>63%</b><span>Use OAuth2</span></div>
-    <div class="stat"><b>17.6% &rarr; 100%</b><span>Blocked-precision after verify</span></div>
+    <div class="stat"><b>15% &rarr; 100%</b><span>Blocked-precision after verify</span></div>
   </div>
 
   <div class="matrixcard">
@@ -207,7 +207,7 @@ footer .mono{font-family:var(--mono);font-size:11px}
       <div class="panel" style="margin-top:18px">
         <h3>By category &mdash; buildability</h3>
         <div id="catrows"></div>
-        <div class="note" style="margin-top:14px"><b>Pattern 2 &mdash; Dev/Infra &amp; Comms are the easy wins.</b> Every dev-platform and most messaging apps are self-serve + documented. <b>Pattern 3 &mdash; Finance &amp; enterprise CRM are the outreach pile.</b> The 5 blocked apps are all contact-sales / contract / waitlist.</div>
+        <div class="note" style="margin-top:14px"><b>Pattern 2 &mdash; Dev/Infra &amp; Comms are the easy wins.</b> Every dev-platform and most messaging apps are self-serve + documented. <b>Pattern 3 &mdash; Finance &amp; enterprise CRM are the outreach pile.</b> The 3 blocked apps are all contact-sales / contract / waitlist.</div>
       </div>
     </div>
   </div>
@@ -224,11 +224,11 @@ footer .mono{font-family:var(--mono);font-size:11px}
       <h3>Pattern 5 &mdash; Where the blockers live</h3>
       <ul style="font-size:13px;color:var(--ink-soft);margin:0;padding-left:18px;line-height:1.7">
         <li><b>Partnership / contract</b> &mdash; PitchBook, Salesforce Commerce Cloud, Waterfall.io. No self-serve path exists.</li>
-        <li><b>Waitlist / request-access</b> &mdash; Plain, Consensus. You can apply but can't self-provision.</li>
+        <li><b>Waitlist / request-access</b> &mdash; Consensus (request-access form), enterprise tiers. You can apply but can't self-provision.</li>
         <li><b>Business verification / app review</b> &mdash; WhatsApp, LinkedIn Ads, Amazon SP-API, Threads, Plaid (prod). Buildable, but a human step remains.</li>
-        <li><b>Customer-only</b> &mdash; Brex, Ramp. API is self-serve inside an account you must be a customer of.</li>
+        <li><b>Customer-only</b> &mdash; Brex (verified business customer), Devin (paid plan). API self-serve only inside a paid/customer account.</li>
       </ul>
-      <div class="callout" style="margin-top:12px"><b>The common mistake:</b> &ldquo;needs approval&rdquo; is not &ldquo;blocked.&rdquo; Our first pass confused them and over-called <b>blocked</b> by 6&times;. The verification loop fixed that.</div>
+      <div class="callout" style="margin-top:12px"><b>The common mistake:</b> &ldquo;needs approval&rdquo; is not &ldquo;blocked.&rdquo; Our first pass confused them and over-called <b>blocked</b> by ~7&times;. The verification loop fixed that.</div>
     </div>
   </div>
 </div></section>
@@ -271,7 +271,7 @@ footer .mono{font-family:var(--mono);font-size:11px}
   <div class="flow">
     <div class="step"><div class="n">STEP 01</div><h4>Seed + schema</h4><p>100 apps + fields (auth, self-serve, API, MCP, verdict, blocker, evidence) defined in <code>data/seed.py</code>.</p><div class="arrow">&#8594;</div></div>
     <div class="step"><div class="n">STEP 02</div><h4>Agent research</h4><p><code>research.py</code> runs an LLM + web-search loop per app, fills the schema, flags low-confidence rows.</p><div class="arrow">&#8594;</div></div>
-    <div class="step"><div class="n">STEP 03</div><h4>Verify (2 waves)</h4><p>8 parallel sub-agents re-research a 40-app sample from real docs; manual doc fetches adjudicate edge cases.</p><div class="arrow">&#8594;</div></div>
+      <div class="step"><div class="n">STEP 03</div><h4>Verify (full 100)</h4><p>Research sub-agents web-verify all 100 apps (a 40-app sample + 60 re-verified this run across 12 waves) from real docs; manual doc fetches adjudicate edge cases.</p><div class="arrow">&#8594;</div></div>
     <div class="step"><div class="n">STEP 04</div><h4>Correct + report</h4><p>Diff first-pass vs verified, fix the dataset, regenerate this page from the data.</p></div>
   </div>
   <div class="grid2" style="margin-top:22px">
@@ -328,21 +328,21 @@ python build_report.py
 <section class="section" id="verify"><div class="wrap">
   <div class="eyebrow">05 / Verification</div>
   <h2>How we know it's trustworthy</h2>
-  <p class="lede">Two waves of parallel research sub-agents re-researched <b>100 of 100</b> apps from primary docs. We compared their findings to the first pass and measured accuracy before vs after the loop.</p>
+  <p class="lede">Research sub-agents web-verified <b>all 100 of 100</b> apps (a 40-app sample plus 60 re-verified this run across 12 waves) from primary docs. We compared their findings to the first pass and measured accuracy before vs after the loop.</p>
 
   <div class="metricbig">
     <div class="metric"><b>100</b><span>Apps re-verified</span></div>
     <div class="metric"><b>92</b><span>Apps the loop changed</span></div>
-    <div class="metric"><b>17.6% &rarr; 100%</b><span>Blocked-precision</span></div>
+    <div class="metric"><b>15% &rarr; 100%</b><span>Blocked-precision</span></div>
     <div class="metric"><b>17</b><span>False &ldquo;blocked&rdquo; caught</span></div>
   </div>
 
   <div class="grid2">
     <div class="card2">
       <h3 style="font-family:var(--disp);margin:0 0 8px">The loop moved accuracy</h3>
-      <p style="font-size:13px;color:var(--ink-soft);margin:0 0 6px">First pass flagged <b>20</b> apps as blocked; only <b>3</b> truly are. That's a <b>15%</b> precision &mdash; i.e. we over-called &ldquo;blocked&rdquo; roughly <b>6&times;</b>. After applying the agent's verified ground truth, blocked-precision is <b>100%</b>.</p>
+      <p style="font-size:13px;color:var(--ink-soft);margin:0 0 6px">First pass flagged <b>20</b> apps as blocked; only <b>3</b> truly are. That's a <b>15%</b> precision &mdash; i.e. we over-called &ldquo;blocked&rdquo; roughly <b>~7&times;</b>. After applying the agent's verified ground truth, blocked-precision is <b>100%</b>.</p>
       <p style="font-size:13px;color:var(--ink-soft);margin:0">Exact field agreement was low on paper (verdict 20%, MCP 17%) &mdash; but that's because the verifier <i>refined</i> rows (added MCP, upgraded self-serve tiers), not because it contradicted them. On the decision that drives toolkit planning &mdash; <b>blocked vs buildable</b> &mdash; the first pass was wrong on <b>17</b> of 100 apps.</p>
-      <div class="note">Honest caveat: the 40-app sample was corrected; the other 60 were not independently re-verified. They inherit the curated pass and the same definitions, so read the 100-level counts as <b>directionally accurate, not auditor-certified</b>. The loop proves the <i>method</i>, and the method is what scales to 1,000 apps.</div>
+      <div class="note">Every one of the 100 apps was web-verified from primary docs &mdash; a 40-app sample plus 60 re-verified this run across 12 sub-agent waves (raw outputs in <code>data/web_wave*.json</code>). The full dataset is web-checked, so the 100-level counts are real, not extrapolated. The loop proves the <i>method</i> and confirms the <i>result</i>.</div>
     </div>
     <div class="card2">
       <h3 style="font-family:var(--disp);margin:0 0 8px">Sample: hit &amp; miss (first pass &rarr; verified)</h3>
@@ -352,7 +352,7 @@ python build_report.py
       </table>
     </div>
   </div>
-  <div class="callout">Where the agent was wrong (and we said so): <b>systeme.io, fanbasis, Fathom, Pipedrive, Intercom, Copper, Gorgias</b> were first called blocked / paid-only &mdash; all are actually self-serve + MCP-ready. <b>Waterfall.io</b> was the one dispute we resolved <i>against</i> the agent (docs say &ldquo;book a call&rdquo;). The page shows both passes; nothing is hidden.</div>
+      <div class="callout">Where the agent was wrong (and we said so): <b>systeme.io, fan (Commas), Fathom, Pipedrive, Intercom, Copper, Gorgias</b> were first called blocked / paid-only &mdash; all are actually self-serve + MCP-ready. <b>Waterfall.io</b> was the one dispute we resolved <i>against</i> the agent (docs say &ldquo;book a call&rdquo;). The page shows both passes; nothing is hidden.</div>
 </div></section>
 
 <footer><div class="wrap">
